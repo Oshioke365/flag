@@ -129,13 +129,7 @@ export default function GamesPage() {
                 {/* 1. Men's Fixtures (Conditionally Rendered) */}
                 {activeDivision === 'Men' && (
                     <div className="space-y-8">
-                        {/* 🎯 FIRST MEN'S MATCH CARD - Using the exact data you provided */}
-                        <MatchFixtureCard
-                            matchImageSrc="/mengame1.png" // Added .png extension for typical usage
-                            matchDay="MATCH DAY 1"
-                            matchTime="11:50 AM WAT"
-                            matchDate="SAT 25/09" 
-                        />
+                    
 
                         {/* You can add more Men's match cards here */}
                     </div>
