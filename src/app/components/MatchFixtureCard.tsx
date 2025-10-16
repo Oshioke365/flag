@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Twitter } from "lucide-react"; // Icons for social media
 
-// Data for footer columns (based on your screenshot)
+// Data for footer columns 
 const footerLinks = [
   {
     title: "General",
