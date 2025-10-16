@@ -105,7 +105,7 @@ export default function NewsPage() {
           priority
         />
         {/* Red overlay */}
-        <div className="absolute inset-0 bg-[#C90F0F] opacity-70"></div>
+        <div className="absolute inset-0 bg-[#FF0923] opacity-70"></div>
 
         <h1 className="relative z-10 text-5xl md:text-6xl font-extrabold uppercase drop-shadow-lg">
           Trending News
