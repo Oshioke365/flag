@@ -48,7 +48,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
               href="/games"
               className={linkBaseClass} // 👈 Applied dynamic class
             >
-              games
+              Games
             </Link>
           </div>
 
