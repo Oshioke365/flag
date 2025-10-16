@@ -48,7 +48,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
               href="/games"
               className={linkBaseClass} // 👈 Applied dynamic class
             >
-              GAMES
+              games
             </Link>
           </div>
 
@@ -73,7 +73,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
           {/* Right links */}
           <div className="hidden sm:flex items-center justify-center gap-[24px]">
             <Link
-              href="/TEAMS"
+              href="/teams"
               className={linkBaseClass} // 👈 Applied dynamic class
             >
               TEAMS
