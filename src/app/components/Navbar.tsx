@@ -48,7 +48,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
               href="/games"
               className={linkBaseClass} // 👈 Applied dynamic class
             >
-              Games
+              GAMES
             </Link>
           </div>
 
@@ -79,7 +79,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
               TEAMS
             </Link>
             <Link
-              href="#"
+              href="/news"
               className={linkBaseClass} // 👈 Applied dynamic class
             >
               NEWS
