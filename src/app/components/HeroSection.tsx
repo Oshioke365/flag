@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     // Main Section: Use a responsive min-height and dynamic height based on content
     <section 
-      className="relative w-full min-h-[900px] lg:h-[1842px] overflow-hidden bg-cover bg-center bg-no-repeat" 
+      className="relative w-full min-h-[500px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat" 
       style={{ backgroundImage: 'url("/hero-bg.png")' }}
     >
       {/* Linear Gradient Overlay: Set height to full container height */}
@@ -87,7 +87,7 @@ export default function HeroSection() {
         <span
           className="text-white 
               text-base sm:text-2xl md:text-3xl lg:text-[40px] 
-              leading-[120%] mt-4"
+              leading-[120%] mt-2"
           style={{
             fontFamily: "ITC Machine Std, sans-serif",
           }}
@@ -95,8 +95,9 @@ export default function HeroSection() {
           Building Africa's Flag Football Future
         </span>
 
-        {/* Player Image - Now flows directly after the text (mt-7 = 28px) */}
-        <div className="mt-7 
+        {/* Player Image - Now flows directly after the text (mt-3 = 12px) */}
+        <div className="block sm:hidden h-[80px]" />
+        <div className="-mt-45 
             max-w-4xl lg:max-w-[1023px]
             w-full h-auto aspect-[1023/944] relative"
         >
