@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     // Main Section: Use a responsive min-height and dynamic height based on content
     <section 
-      className="relative w-full min-h-[450px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat" 
+      className="relative w-full min-h-[480px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat" 
       style={{ backgroundImage: 'url("/hero-bg.png")' }}
     >
       {/* Linear Gradient Overlay: Set height to full container height */}
@@ -41,11 +41,12 @@ export default function HeroSection() {
           top-24 lg:top-[224.5px] 
           left-1/2 -translate-x-1/2 
           w-full px-4 sm:px-8 
-          flex flex-col gap-3 sm:gap-6 
+          flex flex-col gap-1 sm:gap-6 
           items-center text-center"
       >
         {/* Horizontal line: SPORT • COMMUNITY • IMPACT - Stacks on mobile */}
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-5">
+        <div className="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-5   mt-7 sm:mt-2">
+
           <span
             className="text-white uppercase 
                 text-2xl sm:text-5xl md:text-7xl lg:text-[96px] 
@@ -89,7 +90,7 @@ export default function HeroSection() {
         <span
           className="text-white 
               text-base sm:text-2xl md:text-3xl lg:text-[40px] 
-              leading-[120%] mt-2"
+              leading-[120%]   mt-9 sm:mt-4"
           style={{
             fontFamily: "ITC Machine Std, sans-serif",
           }}

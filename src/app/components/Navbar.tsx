@@ -21,7 +21,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
         height: "142px",
         background:
           "linear-gradient(180deg, rgba(255, 255, 255, 0.16) 14.29%, rgba(255, 255, 255, 0) 100%)",
-        backdropFilter: "blur(0px)",
+        backdropFilter: "blur(6px)",
       }}
     >
       <div className="w-full max-w-[1440px] px-6 sm:px-[80px] md:px-[125px] py-[24px] flex justify-center items-center">

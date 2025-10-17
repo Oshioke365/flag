@@ -98,7 +98,7 @@ export default function NewsPage() {
       <section className="relative w-full h-[400px] flex items-center justify-center text-white overflow-hidden">
         {/* Background logo */}
         <Image
-          src="/logo.png"
+          src="/logo1.png"
           alt="CFFL Logo Background"
           fill
           className="object-contain opacity-10"
