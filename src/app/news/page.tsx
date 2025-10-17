@@ -8,7 +8,7 @@ export default function NewsPage() {
   const newsArticles = [
     {
       id: 1,
-      image: "/news1.png",
+      image: "/news2.png",
       date: "17 Sep, 2025",
       title: "Game Day 2 At Showtime Arena: Outlaws Brings The Heat",
       excerpt:
@@ -17,7 +17,7 @@ export default function NewsPage() {
     },
     {
       id: 2,
-      image: "/news2.png",
+      image: "/news3.png",
       date: "17 Sep, 2025",
       title: "Mavericks On The Move: Rising Stars Shaking Up The CFFL",
       excerpt:
@@ -26,7 +26,7 @@ export default function NewsPage() {
     },
     {
       id: 3,
-      image: "/news3.png",
+      image: "/news4.png",
       date: "02 Aug, 2025",
       title: "Clash of the Titans: How the Titans Keep Dominating the League",
       excerpt:
@@ -35,56 +35,56 @@ export default function NewsPage() {
     },
     {
       id: 4,
-      image: "/news4.png",
+      image: "/news5.png",
       date: "25 Jul, 2025",
-      title: "Rising Rivalries: The Battle Between Hawks and Lions",
+      title: "Lions’ Grit: The Road to Redemption After a Tough Season",
       excerpt:
-        "An inside look at the long-standing rivalry heating up again this season as two powerhouse teams face off.",
+        "A narrative on how the Lagos Lions are bouncing back from past setbacks with new energy, training, and leadership..",
       link: "/news/hawks-vs-lions",
     },
     {
       id: 5,
-      image: "/news5.png",
+      image: "/news6.png",
       date: "19 Jul, 2025",
-      title: "Game Day Highlights: Defenders Show Unstoppable Form",
+      title: "Family. Friends. Football.",
       excerpt:
-        "The Defenders’ rock-solid defense and teamwork delivered another unforgettable performance for fans.",
+        "CFFL fans are proof the league is bigger than the scoreboard.",
       link: "/news/defenders-dominance",
     },
     {
       id: 6,
-      image: "/news6.png",
+      image: "/news7.png",
       date: "10 Jul, 2025",
-      title: "Top Plays Of The Week: Touchdowns And Turnovers",
+      title: "Rookies Rising: New Faces Making an Impact Across the CFFL",
       excerpt:
-        "A look at the most electrifying plays from this week’s games — from game-winning touchdowns to clutch turnovers.",
+        "A spotlight on first-year players across the Titans, Warriors, Mavericks, and Off Szn who are already making headlines.",
       link: "/news/top-plays-week",
     },
     {
       id: 7,
-      image: "/news7.png",
+      image: "/news8.png",
       date: "05 Jul, 2025",
-      title: "CFFL Coaches Share Secrets To Success",
+      title: "Off Szn Fan Zone: Showtime Arena Turns Into a Community Festival",
       excerpt:
-        "Exclusive interviews with top coaches revealing strategies, motivation techniques, and team-building insights.",
+        "Coverage of the gameday atmosphere, from tailgates to halftime entertainment, showing how fans bring the league to life.",
       link: "/news/coaches-secrets",
     },
     {
       id: 8,
-      image: "/news8.png",
+      image: "/news9.png",
       date: "01 Jul, 2025",
-      title: "Fans Bring The Energy: How Support Powers The League",
+      title: "Double Glory: Outlaws’ Star Shines With Two Trophies",
       excerpt:
-        "The electric fan culture behind the CFFL and how supporters play a huge role in the players’ performance.",
+        "One player. Two trophies. The Outlaws’ star just lit up the CFFL with back-to-back awards, proving he’s not only a game-changer but a history-maker.",
       link: "/news/fans-energy",
     },
     {
       id: 9,
-      image: "/news9.png",
+      image: "/news10.png",
       date: "25 Jun, 2025",
-      title: "Rookie Watch: The New Faces Making An Impact",
+      title: "Titans vs. Wolverines: Rivalry Renewed Under the Lights",
       excerpt:
-        "Meet the rookies turning heads and proving their worth on the big stage this season.",
+        "A preview of their highly anticipated matchup, with storylines, predictions, and key players to watch.",
       link: "/news/rookie-watch",
     },
   ];

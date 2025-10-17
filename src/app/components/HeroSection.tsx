@@ -13,8 +13,9 @@ export default function HeroSection() {
         }}
       />
 
-      {/* CFFL Image Layer */}
-      <div className="absolute top-[156px] left-[157px] w-[1126px] h-[756px] rounded-2xl overflow-hidden">
+      {/* CFFL Image Layer - Centered */}
+      {/* Added flex, justify-center, items-center to center content within its parent */}
+      <div className="absolute top-[156px] left-1/2 -translate-x-1/2 w-[1126px] h-[756px] rounded-2xl overflow-hidden flex justify-center items-center">
         <Image
           src="/CFFL.png"
           alt="CFFL Hero"
@@ -25,8 +26,9 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Text Container Above CFFL */}
-      <div className="absolute top-[224.5px] left-[84px] flex flex-col gap-6">
+      {/* Text Container Above CFFL - Centered horizontally */}
+      {/* Changed 'left' to 'left-1/2 -translate-x-1/2' for horizontal centering */}
+      <div className="absolute top-[224.5px] left-1/2 -translate-x-1/2 flex flex-col gap-6 items-center">
         {/* Horizontal line: SPORT • COMMUNITY • IMPACT */}
         <div className="flex items-center gap-5">
           <span
@@ -61,9 +63,9 @@ export default function HeroSection() {
           </span>
         </div>
 
-        {/* Subtitle below */}
+        {/* Subtitle below - Adjusted padding to simplify centering based on container */}
         <span
-          className="text-white text-[40px] pl-[330px] leading-[120%]"
+          className="text-white text-[40px] leading-[120%] text-center" // Added text-center
           style={{
             fontFamily: "ITC Machine Std, sans-serif",
           }}
@@ -72,8 +74,9 @@ export default function HeroSection() {
         </span>
       </div>
 
-      {/* Player Image Below Text */}
-      <div className="absolute top-[400.5px] left-[169px]">
+      {/* Player Image Below Text - Centered */}
+      {/* Changed 'left' to 'left-1/2 -translate-x-1/2' for horizontal centering */}
+      <div className="absolute top-[400.5px] left-1/2 -translate-x-1/2">
         <Image
           src="/players.png"
           alt="Player"
@@ -85,7 +88,7 @@ export default function HeroSection() {
       
       {/* Bottom Fade */}
       <div className="absolute bottom-0 w-full h-32 bg-gradient-to-t from-black to-transparent" />
-  
+ 
     </section>
   );
 }
