@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     // Main Section: Use a responsive min-height and dynamic height based on content
     <section 
-      className="relative w-full min-h-[300px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat" 
+      className="relative w-full min-h-[450px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat" 
       style={{ backgroundImage: 'url("/hero-bg.png")' }}
     >
       {/* Linear Gradient Overlay: Set height to full container height */}
