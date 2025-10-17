@@ -11,13 +11,9 @@ interface NavbarProps {
 
 // 2. Accept Props
 export default function Navbar({ linkTextColor }: NavbarProps) {
-  // 3. Determine the final link text color class, defaulting to white
-  // Note: We removed the 'text-white' from the parent div and applied it here.
-  const textColorClass = linkTextColor || 'text-white';
-  
-  // A combined class for all links (includes the dynamic color and hover)
+  const textColorClass = linkTextColor || "text-white";
   const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
-  
+
   return (
     <nav
       className="fixed top-0 left-0 w-full z-50 flex justify-center"
@@ -28,67 +24,51 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
         backdropFilter: "blur(0px)",
       }}
     >
-      {/* Outer container */}
       <div className="w-full max-w-[1440px] px-6 sm:px-[80px] md:px-[125px] py-[24px] flex justify-center items-center">
-        {/* Inner navbar content */}
-        {/* We removed text-white from this div, as the color is now applied to individual links */}
         <div className="flex items-center justify-between font-bold tracking-wide text-sm w-full sm:w-[397px] h-auto sm:h-[94px] gap-4 sm:gap-[19px]">
           
           {/* Left links */}
           <div className="hidden sm:flex items-center justify-center gap-[24px]">
-            <Link
-              href="#"
-              className={linkBaseClass} // 👈 Applied dynamic class
-            >
+            <Link href="#" className={linkBaseClass}>
               WATCH
             </Link>
-
-            {/* GAMES link */}
-            <Link
-              href="/games"
-              className={linkBaseClass} // 👈 Applied dynamic class
-            >
+            <Link href="/games" className={linkBaseClass}>
               GAMES
             </Link>
           </div>
 
-          {/* Center logo (responsive) */}
+          {/* ✅ Center logo (clickable) */}
           <div className="flex justify-center items-center flex-1">
-            <Image
-              src="/logo1.png"
-              alt="CFFL Logo"
-              width={85}
-              height={94}
-              priority
-              className="
-                h-[60px] w-auto 
-                sm:h-[70px] 
-                md:h-[85px] 
-                lg:h-[94px] 
-                transition-all duration-300 ease-in-out
-              "
-            />
+            <Link href="/" aria-label="Go to homepage">
+              <Image
+                src="/logo1.png"
+                alt="CFFL Logo"
+                width={85}
+                height={94}
+                priority
+                className="
+                  h-[60px] w-auto 
+                  sm:h-[70px] 
+                  md:h-[85px] 
+                  lg:h-[94px] 
+                  transition-all duration-300 ease-in-out
+                "
+              />
+            </Link>
           </div>
 
           {/* Right links */}
           <div className="hidden sm:flex items-center justify-center gap-[24px]">
-            <Link
-              href="/teams"
-              className={linkBaseClass} // 👈 Applied dynamic class
-            >
+            <Link href="/teams" className={linkBaseClass}>
               TEAMS
             </Link>
-            <Link
-              href="/news"
-              className={linkBaseClass} // 👈 Applied dynamic class
-            >
+            <Link href="/news" className={linkBaseClass}>
               NEWS
             </Link>
           </div>
 
           {/* Mobile menu button */}
           <div className="sm:hidden flex items-center">
-            {/* The mobile button text remains white, as it's not a standard link */}
             <button
               className="text-white text-2xl focus:outline-none"
               aria-label="Menu"
