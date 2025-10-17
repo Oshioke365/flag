@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     // Main Section: Use a responsive min-height and dynamic height based on content
     <section 
-      className="relative w-full min-h-[500px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat" 
+      className="relative w-full min-h-[300px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat" 
       style={{ backgroundImage: 'url("/hero-bg.png")' }}
     >
       {/* Linear Gradient Overlay: Set height to full container height */}
@@ -17,7 +17,9 @@ export default function HeroSection() {
         }}
       />
 
+
       {/* CFFL Image Layer - Responsive Sizing and Centered */}
+       <div className="block sm:hidden h-[185px]" />
       <div className="absolute 
           top-20 lg:top-[156px] 
           left-1/2 -translate-x-1/2 
@@ -96,7 +98,7 @@ export default function HeroSection() {
         </span>
 
         {/* Player Image - Now flows directly after the text (mt-3 = 12px) */}
-        <div className="block sm:hidden h-[80px]" />
+        <div className="block sm:hidden h-[180px]" />
         <div className="-mt-45 
             max-w-4xl lg:max-w-[1023px]
             w-full h-auto aspect-[1023/944] relative"
