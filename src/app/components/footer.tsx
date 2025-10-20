@@ -107,7 +107,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 max-w-2xl text-center md:text-left">
             <div className="flex-shrink-0">
               <Image
-                src="/CFFL-logo-white.png"
+                src="/logo1.png"
                 alt="CFFL League Logo"
                 width={70}
                 height={70}

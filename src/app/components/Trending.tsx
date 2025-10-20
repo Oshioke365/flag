@@ -56,6 +56,7 @@ export default function Trending() {
              text-left w-auto 
              text-[164px] leading-[110px] font-medium uppercase 
              text-[#BAB8B8] opacity-30 pointer-events-none select-none z-0 pl-[134px]"
+  style={{ fontFamily: "ITC Machine Std, sans-serif" }}
 >
   Trending
 </h1>
@@ -66,7 +67,7 @@ export default function Trending() {
 
    {/* Header */}
 <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6 w-full">
-  <h2 className="text-[32px] md:text-[40px] font-extrabold text-[#002060] uppercase tracking-tight">
+  <h2 className="text-[28px] md:text-[40px] font-extrabold text-[#012752] uppercase tracking-tight">
     Trending News
   </h2>
 
@@ -164,7 +165,7 @@ export default function Trending() {
       <span
         key={index}
         onClick={() => setActiveIndex(index)}
-        className={`text-[18px] font-semibold cursor-pointer transition-colors ${
+        className={`text-[24px] font-semibold cursor-pointer transition-colors ${
           activeIndex === index
             ? "text-[#012752]"
             : "text-gray-400 hover:text-[#012752]"

@@ -111,14 +111,16 @@ export default function HeroSection() {
             // Mimicking fill behavior with absolute, inset-0, w-full, h-full
             className="absolute inset-0 w-full h-full object-contain"
           />
+          
         </div>
       </div>
       
       {/* The original Player Image Below Text container has been removed */}
       
-      {/* Bottom Fade */}
-      <div className="absolute bottom-0 w-full h-20 sm:h-32 bg-gradient-to-t from-black to-transparent" />
- 
+{/* Seamless white fade into next section */}
+<div className="absolute bottom-0 translate-y-10 sm:translate-y-16 w-full h-72 sm:h-96 bg-gradient-to-t from-white via-white/90 to-transparent blur-2xl opacity-100 pointer-events-none" />
+
+
     </section>
   );
 }
