@@ -3,21 +3,19 @@ import Footer from "@/app/components/footer";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { client } from "@/sanity/lib/client"; // ✅ correct Sanity client import
+import { client } from "@/sanity/lib/client";
 
-// ✅ Correct Type — 'params' is NOT a Promise
-interface TeamPageProps {
-  params: {
-    slug: string;
-  };
+// Type definition for dynamic route page
+type TeamPageProps = {
+  params: Promise<{ slug: string }>;
   searchParams?: { [key: string]: string | string[] | undefined };
-}
+};
 
-// ✅ Single export, correct async function signature
+// Async function to handle dynamic route
 export default async function TeamPage({ params }: TeamPageProps) {
-  const { slug } = params;
+  const { slug } = await params; // Await the params to resolve the Promise
 
-  // ✅ Fetch team data from Sanity
+  // Fetch team data from Sanity
   const team = await client.fetch(
     `*[_type == "team" && slug.current == $slug][0]`,
     { slug }
@@ -157,5 +155,5 @@ export default async function TeamPage({ params }: TeamPageProps) {
   );
 }
 
-// ✅ Force static generation (safe for Vercel)
+// Force static generation (safe for Vercel)
 export const dynamic = "force-static";
