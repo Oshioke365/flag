@@ -32,9 +32,8 @@ export async function generateStaticParams() {
   }));
 }
 
-// 📰 Main Page Component
-export default async function NewsDetailPage({ params }: PageProps) {
-  const { slug } = params;
+export default async function NewsDetailPage(props: { params: Promise<{ slug: string }> }) {
+  const { slug } = await props.params;
 
   const article = await client.fetch(
     `
