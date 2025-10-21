@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+
 import { motion, useAnimation } from "framer-motion";
 
 // --- Data for the Animated Upcoming Schedule ---
