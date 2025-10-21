@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-
 import { motion, useAnimation } from "framer-motion";
 
-// --- Data for the Animated Upcoming Schedule (Unchanged) ---
+// --- Data for the Animated Upcoming Schedule ---
 const games = [
   { id: 1, logo: "/team1.png", date: "Oct 18", week: "WK 4 - 6:00 PM" },
   { id: 2, logo: "/team2.png", date: "Oct 20", week: "WK 4 - 7:30 PM" },
@@ -14,7 +13,7 @@ const games = [
   { id: 5, logo: "/team5.png", date: "Oct 26", week: "WK 4 - 5:00 PM" },
 ];
 
-// --- Data for the New Next Games Section (Unchanged) ---
+// --- Data for Game Replays ---
 const nextGames = [
   {
     id: 1,
@@ -47,7 +46,6 @@ const nextGames = [
     team2: { name: "TAT", logo: "/team4.png", color: "#79B222" },
   },
 ];
-
 
 export default function Upcoming() {
   const controls = useAnimation();
@@ -82,17 +80,17 @@ export default function Upcoming() {
     };
   }, [controls, isPaused, scrollDuration, isRunning]);
 
-  // Helper function to determine the color/gradient for the main card background
+  // Helper for team color
   const getTeam1Color = (team1Color: string | string[]) => {
     if (Array.isArray(team1Color)) {
-      return 'transparent'; 
+      return "transparent";
     }
     return team1Color;
   };
-  
+
   return (
-    <section 
-      className="relative w-full py-[120px] bg-[#F7F7F7]" 
+    <section
+      className="relative w-full py-[120px] bg-[#F7F7F7]"
       aria-label="Upcoming Schedule and Game Replays"
     >
       {/* ------------------ 1. UPCOMING SCHEDULE ------------------ */}
@@ -108,16 +106,12 @@ export default function Upcoming() {
       className="w-full h-auto object-cover"
       style={{
       
-<<<<<<< HEAD
         opacity:"0.5",
       }}
       
     />
 
   </div>
-=======
-      {/* ------------------ 1. UPCOMING SCHEDULE SECTION (Background Darkened) ------------------ */}
-      <div className="relative w-full flex justify-center items-center rounded-lg overflow-hidden px-6 md:px-[80px] lg:px-[134px]">
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-black opacity-30 z-10"></div>
@@ -134,56 +128,61 @@ export default function Upcoming() {
             Upcoming Schedule
           </h2>
 
-        <div
-          className="absolute bottom-0 left-0 right-0 overflow-hidden z-20"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          <motion.div className="flex gap-6 py-6 px-8" animate={controls}>
-            {[...games, ...games].map((game, index) => (
-              <div
-                key={index}
-                className="relative flex-shrink-0 w-[280px] h-[100px] border border-[#EBEEF3BF] rounded-xl flex items-center overflow-hidden backdrop-blur-sm"
-              >
-                {/* Left Half (White Background) */}
-                <div className="absolute left-0 top-0 h-full w-1/2 bg-white flex items-center justify-center p-4 rounded-l-xl z-0">
-                  <Image
-                    src={game.logo}
-                    alt="team logo"
-                    width={50}
-                    height={69}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "/placeholder.png";
-                    }}
-                    className="object-contain mix-blend-luminosity opacity-100"
-                  />
+          {/* Marquee Motion Area */}
+          <div
+            className="absolute bottom-0 left-0 right-0 overflow-hidden z-20"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            <motion.div
+              className="flex gap-6 py-6 px-8 w-full max-w-[1200px] mx-auto"
+              animate={controls}
+            >
+              {[...games, ...games].map((game, index) => (
+                <div
+                  key={index}
+                  className="relative flex-shrink-0 w-[280px] h-[100px] border border-[#EBEEF3BF] rounded-xl flex items-center overflow-hidden backdrop-blur-sm"
+                >
+                  <div className="absolute left-0 top-0 h-full w-1/2 bg-white flex items-center justify-center p-4 rounded-l-xl z-0">
+                    <Image
+                      src={game.logo}
+                      alt="team logo"
+                      width={50}
+                      height={69}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/placeholder.png";
+                      }}
+                      className="object-contain mix-blend-luminosity opacity-100"
+                    />
+                  </div>
+
+                  <div className="flex flex-col justify-center relative z-10 w-1/2 ml-auto pl-4">
+                    <p className="text-white text-[36px] font-medium leading-none">
+                      {game.date}
+                    </p>
+                    <p className="text-white text-[16px] font-normal mt-1">
+                      {game.week}
+                    </p>
+                  </div>
                 </div>
-                
-                {/* Right Half (Transparent/Date & Time) */}
-                <div className="flex flex-col justify-center relative z-10 w-1/2 ml-auto pl-4">
-                  <p className="text-white text-[36px] font-medium leading-none">
-                    {game.date}
-                  </p>
-                  <p className="text-white text-[16px] font-normal mt-1">
-                    {game.week}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </div>
-      
+
       {/* ------------------ 2. GAME REPLAYS SECTION ------------------ */}
-      <div className="w-full pt-20 px-6 md:px-[80px] lg:px-[134px]" >
-        
-        {/* Header with Title and See All Link */}
+      <div className="w-full pt-20 px-6 md:px-[80px] lg:px-[134px]">
+        {/* Header */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6 w-full">
-          <h2 className="text-[28px] md:text-[40px] font-extrabold text-[#002060] uppercase tracking-tight"   style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 500,
-  }}>
+          <h2
+            className="text-[28px] md:text-[40px] font-extrabold text-[#002060] uppercase tracking-tight"
+            style={{
+              fontFamily: "DM Sans, sans-serif",
+              fontWeight: 500,
+            }}
+          >
             Game Replays
           </h2>
           <a
@@ -194,52 +193,55 @@ export default function Upcoming() {
           </a>
         </div>
 
-        {/* Game Cards Grid */}
+        {/* ✅ Game Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {nextGames.map((game) => (
             <div
               key={game.id}
               className="relative w-full h-[150px] overflow-hidden rounded-xl shadow-lg group cursor-pointer"
             >
-              {/* Background divided into two halves using a CSS gradient */}
+              {/* Background */}
               <div
-                // FIX: Added z-0 to push this background layer beneath the content layers
-                className="absolute inset-0 transition-opacity duration-300 z-0"
+                className="absolute inset-0 z-0"
                 style={{
-                  background: `linear-gradient(to right, ${getTeam1Color(game.team1.color)} 50%, ${game.team2.color} 50%)`,
+                  background: `linear-gradient(to right, ${getTeam1Color(
+                    game.team1.color
+                  )} 50%, ${game.team2.color} 50%)`,
                 }}
               ></div>
 
-              {/* Conditional Team 1 Gradient Overlay */}
+              {/* Gradient Overlay */}
               {Array.isArray(game.team1.color) && (
                 <div
-                  className="absolute left-0 top-0 w-1/2 h-full z-[1]" 
+                  className="absolute left-0 top-0 w-1/2 h-full z-[1]"
                   style={{
                     background: `linear-gradient(to right, ${game.team1.color[0]}, ${game.team1.color[1]})`,
                   }}
                 />
               )}
 
-              {/* Content for Team 1 (Left Half) - z-20 */}
-              <div className="absolute left-0 top-0 w-1/2 h-full flex flex-col items-center justify-center p-4 relative z-20">
+              {/* Team 1 */}
+              <div className="absolute left-0 top-0 w-1/2 h-full flex flex-col items-center justify-center p-4 z-20">
                 <Image
                   src={game.team1.logo}
                   alt={`${game.team1.name} Logo`}
                   width={60}
                   height={60}
-                  className="object-contain" 
+                  className="object-contain"
                 />
-                <p className="mt-1 text-white text-[28px] font-bold uppercase"   style={{
-    fontFamily: "ITC Machine Std, sans-serif",
-    fontWeight: 700,
-  }}
-  >
+                <p
+                  className="mt-1 text-white text-[28px] font-bold uppercase"
+                  style={{
+                    fontFamily: "ITC Machine Std, sans-serif",
+                    fontWeight: 700,
+                  }}
+                >
                   {game.team1.name}
                 </p>
               </div>
 
-              {/* Content for Team 2 (Right Half) - z-20 */}
-              <div className="absolute right-0 top-0 w-1/2 h-full flex flex-col items-center justify-center p-4 relative z-20">
+              {/* Team 2 */}
+              <div className="absolute right-0 top-0 w-1/2 h-full flex flex-col items-center justify-center p-4 z-20">
                 <Image
                   src={game.team2.logo}
                   alt={`${game.team2.name} Logo`}
@@ -249,25 +251,31 @@ export default function Upcoming() {
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = "/placeholder.png";
-                    target.width = 60; 
+                    target.width = 60;
                     target.height = 60;
                   }}
                   className="object-contain"
                 />
-                <p className="mt-1 text-white text-[28px] font-bold uppercase">
+                <p
+                  className="mt-1 text-white text-[28px] font-bold uppercase"
+                  style={{
+                    fontFamily: "ITC Machine Std, sans-serif",
+                    fontWeight: 700,
+                  }}
+                >
                   {game.team2.name}
                 </p>
               </div>
 
-              {/* The Central Play Button Overlay - z-30 */}
+              {/* Play Button */}
               <div className="absolute inset-0 flex items-center justify-center z-30">
                 <div className="w-[120px] h-[120px] flex items-center justify-center transition-all duration-300 group-hover:scale-105">
                   <Image
-                    src="/play.png" 
+                    src="/play.png"
                     alt="Play button icon"
                     width={60}
                     height={60}
-                    className="object-contain" 
+                    className="object-contain"
                   />
                 </div>
               </div>
