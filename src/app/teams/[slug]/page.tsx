@@ -3,43 +3,57 @@ import Footer from "@/app/components/footer";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { client } from "@/sanity/lib/client"; // ✅ make sure path matches your setup
 
-// 1. RE-INTRODUCE YOUR ORIGINAL, CORRECT PROP TYPE
 interface TeamPageProps {
   params: {
     slug: string;
   };
-  // Add searchParams here, as Next.js pages always accept them,
-  // which might satisfy the "constraint 'PageProps'" requirement.
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-
-// ✅ Required for `output: "export"`
-export async function generateStaticParams() {
-  return [
-    { slug: "titans" },
-    { slug: "warriors" },
-    { slug: "lions" },
-    // Add more team slugs as needed
-  ];
-}
-
-// ✅ Optional (helps static export know how to generate HTML)
-export const dynamic = "force-static";
-
-const newsArticles = [
-  // ... (newsArticles array remains here)
-];
-
-// 2. CHANGE THE COMPONENT TO AN ASYNC FUNCTION
-// App Router page components are commonly defined as async functions,
-// even if they don't use 'await'. This often resolves complex type
-// compatibility issues related to server-side rendering/static generation.
-export default async function TeamDetail({ params }: TeamPageProps) {
+// ✅ single export only
+export default async function TeamPage({ params }: TeamPageProps) {
   const { slug } = params;
 
-  // ... (rest of your component remains the same)
+  // ✅ fetch team data from Sanity
+  const team = await client.fetch(
+    `*[_type == "team" && slug.current == $slug][0]`,
+    { slug }
+  );
+
+  if (!team) {
+    return (
+      <div className="text-center text-white min-h-screen flex items-center justify-center bg-black">
+        Team not found.
+      </div>
+    );
+  }
+
+  // ✅ Example news articles (you can later fetch these dynamically too)
+  const newsArticles = [
+    {
+      id: 1,
+      imageSrc: "/titanfan1.png",
+      writeup: `${team.name} Triumphs in Epic Match!`,
+      date: "Oct 10, 2025",
+      link: "/news/1",
+    },
+    {
+      id: 2,
+      imageSrc: "/titanfan2.png",
+      writeup: `${team.name} Signs Rising Star Player`,
+      date: "Oct 15, 2025",
+      link: "/news/2",
+    },
+    {
+      id: 3,
+      imageSrc: "/titanfan3.png",
+      writeup: `${team.name} Fans Celebrate Record Win`,
+      date: "Oct 18, 2025",
+      link: "/news/3",
+    },
+  ];
 
   return (
     <>
@@ -49,19 +63,29 @@ export default async function TeamDetail({ params }: TeamPageProps) {
       <main className="min-h-screen bg-white text-gray-800 pt-[160px] px-6 md:px-10">
         {/* Hero Image */}
         <div className="relative w-full h-auto mb-8">
-          <Image
-            src="/titan-fans.png"
-            alt={`${slug} Fans`}
-            width={1200}
-            height={400}
-            className="w-full object-cover rounded-lg shadow-lg"
-          />
+          {team.logo?.asset?.url ? (
+            <Image
+              src={team.logo.asset.url}
+              alt={team.name}
+              width={1200}
+              height={400}
+              className="w-full object-cover rounded-lg shadow-lg"
+            />
+          ) : (
+            <Image
+              src="/titan-fans.png"
+              alt={`${slug} Fans`}
+              width={1200}
+              height={400}
+              className="w-full object-cover rounded-lg shadow-lg"
+            />
+          )}
         </div>
 
         {/* Fan Image Carousel */}
         <div className="flex items-center justify-center py-8">
           <button
-            className="p-3 bg-white border border-gray-300  shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 mr-4"
+            className="p-3 bg-white border border-gray-300 shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 mr-4"
             aria-label="Previous image"
           >
             <ArrowLeft size={24} />
@@ -72,7 +96,7 @@ export default async function TeamDetail({ params }: TeamPageProps) {
               (src, index) => (
                 <div key={index} className="flex-shrink-0">
                   <Image
-                    src={src} // ✅ use the dynamic value here
+                    src={src}
                     alt={`Fan image ${index + 1}`}
                     width={172}
                     height={172}
@@ -84,13 +108,12 @@ export default async function TeamDetail({ params }: TeamPageProps) {
           </div>
 
           <button
-            className="p-3 bg-white border border-gray-300  shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 ml-4"
+            className="p-3 bg-white border border-gray-300 shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 ml-4"
             aria-label="Next image"
           >
             <ArrowRight size={24} />
           </button>
         </div>
-
 
         {/* Team News Section */}
         <div className="bg-[#f7f7f7] py-12 px-6 md:px-10 -mx-6 md:-mx-10 mt-8">
@@ -132,3 +155,5 @@ export default async function TeamDetail({ params }: TeamPageProps) {
     </>
   );
 }
+
+export const dynamic = "force-static";
