@@ -5,17 +5,18 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 
-// Type definition for dynamic route page
-type TeamPageProps = {
-  params: Promise<{ slug: string }>;
+// ✅ Correct type definition
+interface TeamPageProps {
+  params: {
+    slug: string;
+  };
   searchParams?: { [key: string]: string | string[] | undefined };
-};
+}
 
-// Async function to handle dynamic route
+// ✅ Main page component
 export default async function TeamPage({ params }: TeamPageProps) {
-  const { slug } = await params; // Await the params to resolve the Promise
+  const { slug } = params;
 
-  // Fetch team data from Sanity
   const team = await client.fetch(
     `*[_type == "team" && slug.current == $slug][0]`,
     { slug }
@@ -29,7 +30,6 @@ export default async function TeamPage({ params }: TeamPageProps) {
     );
   }
 
-  // Example static news articles
   const newsArticles = [
     {
       id: 1,
@@ -56,7 +56,6 @@ export default async function TeamPage({ params }: TeamPageProps) {
 
   return (
     <>
-      {/* Navbar */}
       <Navbar linkTextColor="text-black" />
 
       <main className="min-h-screen bg-white text-gray-800 pt-[160px] px-6 md:px-10">
@@ -81,7 +80,7 @@ export default async function TeamPage({ params }: TeamPageProps) {
           )}
         </div>
 
-        {/* Fan Image Carousel */}
+        {/* Fan Carousel */}
         <div className="flex items-center justify-center py-8">
           <button
             className="p-3 bg-white border border-gray-300 shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 mr-4"
@@ -155,5 +154,5 @@ export default async function TeamPage({ params }: TeamPageProps) {
   );
 }
 
-// Force static generation (safe for Vercel)
+// ✅ Force static rendering (important for deployment)
 export const dynamic = "force-static";
