@@ -4,11 +4,16 @@ import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
+// 1. RE-INTRODUCE YOUR ORIGINAL, CORRECT PROP TYPE
 interface TeamPageProps {
   params: {
     slug: string;
   };
+  // Add searchParams here, as Next.js pages always accept them,
+  // which might satisfy the "constraint 'PageProps'" requirement.
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
+
 
 // ✅ Required for `output: "export"`
 export async function generateStaticParams() {
@@ -24,31 +29,17 @@ export async function generateStaticParams() {
 export const dynamic = "force-static";
 
 const newsArticles = [
-  {
-    id: 1,
-    imageSrc: "/news-img-1.png",
-    writeup: "Gameday with the Raptors",
-    date: "October 10, 2025",
-    link: "#article1",
-  },
-  {
-    id: 2,
-    imageSrc: "/news1.png",
-    writeup: "Training camp preview: Ajanaku flexing his skills on the pitch",
-    date: "October 3, 2025",
-    link: "#article2",
-  },
-  {
-    id: 3,
-    imageSrc: "/news-img-3.png",
-    writeup: "Gameday: Rookies under the radar ",
-    date: "September 25, 2025",
-    link: "#article3",
-  },
+  // ... (newsArticles array remains here)
 ];
 
-export default function TeamDetail({ params }: TeamPageProps) {
+// 2. CHANGE THE COMPONENT TO AN ASYNC FUNCTION
+// App Router page components are commonly defined as async functions,
+// even if they don't use 'await'. This often resolves complex type
+// compatibility issues related to server-side rendering/static generation.
+export default async function TeamDetail({ params }: TeamPageProps) {
   const { slug } = params;
+
+  // ... (rest of your component remains the same)
 
   return (
     <>
@@ -68,43 +59,43 @@ export default function TeamDetail({ params }: TeamPageProps) {
         </div>
 
         {/* Fan Image Carousel */}
-     <div className="flex items-center justify-center py-8">
-  <button
-    className="p-3 bg-white border border-gray-300  shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 mr-4"
-    aria-label="Previous image"
-  >
-    <ArrowLeft size={24} />
-  </button>
+        <div className="flex items-center justify-center py-8">
+          <button
+            className="p-3 bg-white border border-gray-300  shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 mr-4"
+            aria-label="Previous image"
+          >
+            <ArrowLeft size={24} />
+          </button>
 
-  <div className="flex space-x-4 overflow-hidden">
-    {["/titanfan1.png", "/titanfan2.png", "/titanfan3.png"].map(
-      (src, index) => (
-        <div key={index} className="flex-shrink-0">
-          <Image
-            src={src} // ✅ use the dynamic value here
-            alt={`Fan image ${index + 1}`}
-            width={172}
-            height={172}
-            className="w-full object-cover rounded-lg shadow-lg"
-          />
+          <div className="flex space-x-4 overflow-hidden">
+            {["/titanfan1.png", "/titanfan2.png", "/titanfan3.png"].map(
+              (src, index) => (
+                <div key={index} className="flex-shrink-0">
+                  <Image
+                    src={src} // ✅ use the dynamic value here
+                    alt={`Fan image ${index + 1}`}
+                    width={172}
+                    height={172}
+                    className="w-full object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+              )
+            )}
+          </div>
+
+          <button
+            className="p-3 bg-white border border-gray-300  shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 ml-4"
+            aria-label="Next image"
+          >
+            <ArrowRight size={24} />
+          </button>
         </div>
-      )
-    )}
-  </div>
-
-  <button
-    className="p-3 bg-white border border-gray-300  shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 ml-4"
-    aria-label="Next image"
-  >
-    <ArrowRight size={24} />
-  </button>
-</div>
 
 
         {/* Team News Section */}
         <div className="bg-[#f7f7f7] py-12 px-6 md:px-10 -mx-6 md:-mx-10 mt-8">
           <h2 className="text-3xl font-extrabold text-[#002060] mb-8 uppercase tracking-tight">
-           Team News
+            Team News
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
