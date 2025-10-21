@@ -5,23 +5,25 @@ import Link from "next/link";
 
 // 1. Define Props Interface
 interface NavbarProps {
-  // Optional prop to override the default link text color (e.g., "text-black")
   linkTextColor?: string;
 }
 
 // 2. Accept Props
 export default function Navbar({ linkTextColor }: NavbarProps) {
   const textColorClass = linkTextColor || "text-white";
-  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
+  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass} font-machine`;
 
   return (
     <nav
-      className="fixed top-0 left-0 w-full z-50 flex justify-center"
+      className={`
+        fixed top-0 left-0 w-full z-50 flex justify-center font-machine
+        bg-[rgba(255,255,255,0.16)] sm:bg-[rgba(255,255,255,0.16)]
+        sm:backdrop-blur-[6px]
+      `}
       style={{
         height: "142px",
         background:
           "linear-gradient(180deg, rgba(255, 255, 255, 0.16) 14.29%, rgba(255, 255, 255, 0) 100%)",
-        backdropFilter: "blur(6px)",
       }}
     >
       <div className="w-full max-w-[1440px] px-6 sm:px-[80px] md:px-[125px] py-[24px] flex justify-center items-center">
@@ -70,7 +72,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
           {/* Mobile menu button */}
           <div className="sm:hidden flex items-center">
             <button
-              className="text-white text-2xl focus:outline-none"
+              className="text-white text-2xl focus:outline-none font-machine"
               aria-label="Menu"
             >
               ☰

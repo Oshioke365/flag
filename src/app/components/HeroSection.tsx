@@ -87,16 +87,17 @@ export default function HeroSection() {
         </div>
 
         {/* Subtitle - Responsive Text Size */}
-        <span
-          className="text-white 
-              text-base sm:text-2xl md:text-3xl lg:text-[40px] 
-              leading-[120%]   mt-9 sm:mt-4"
-          style={{
-            fontFamily: "ITC Machine Std, sans-serif",
-          }}
-        >
-          Building Africa's Flag Football Future
-        </span>
+ <span
+  className="text-white 
+      text-base sm:text-2xl md:text-3xl lg:text-[40px] 
+      leading-[120%] mt-9 sm:mt-4"
+  style={{
+    fontFamily: "DM Sans, sans-serif",
+  }}
+>
+  Building Africa's Flag Football Future
+</span>
+
 
         {/* Player Image - Now flows directly after the text (mt-3 = 12px) */}
         <div className="block sm:hidden h-[180px]" />
@@ -118,7 +119,7 @@ export default function HeroSection() {
       {/* The original Player Image Below Text container has been removed */}
       
 {/* Seamless white fade into next section */}
-<div className="absolute bottom-0 translate-y-10 sm:translate-y-16 w-full h-72 sm:h-96 bg-gradient-to-t from-white via-white/90 to-transparent blur-2xl opacity-100 pointer-events-none" />
+<div className="absolute bottom-0 translate-y-10 sm:translate-y-16 w-full h-62 sm:h-86 bg-gradient-to-t from-white via-white/90 to-transparent blur-2xl opacity-100 pointer-events-none" />
 
 
     </section>
