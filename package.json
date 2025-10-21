@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "deploy": "gh-pages -d out"
+    "build": "next build ",
+     "start": "next start"
   },
   "dependencies": {
     "@portabletext/react": "^4.0.3",
