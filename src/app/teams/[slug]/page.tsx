@@ -3,8 +3,9 @@ import Footer from "@/app/components/footer";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { client } from "@/sanity/lib/client"; // ✅ make sure path matches your setup
+import { client } from "@/sanity/lib/client"; // ✅ correct Sanity client import
 
+// ✅ Correct Type — 'params' is NOT a Promise
 interface TeamPageProps {
   params: {
     slug: string;
@@ -12,11 +13,11 @@ interface TeamPageProps {
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-// ✅ single export only
+// ✅ Single export, correct async function signature
 export default async function TeamPage({ params }: TeamPageProps) {
   const { slug } = params;
 
-  // ✅ fetch team data from Sanity
+  // ✅ Fetch team data from Sanity
   const team = await client.fetch(
     `*[_type == "team" && slug.current == $slug][0]`,
     { slug }
@@ -30,26 +31,26 @@ export default async function TeamPage({ params }: TeamPageProps) {
     );
   }
 
-  // ✅ Example news articles (you can later fetch these dynamically too)
+  // Example static news articles
   const newsArticles = [
     {
       id: 1,
       imageSrc: "/titanfan1.png",
-      writeup: `${team.name} Triumphs in Epic Match!`,
+      writeup: `${team.name || slug} Triumphs in Epic Match!`,
       date: "Oct 10, 2025",
       link: "/news/1",
     },
     {
       id: 2,
       imageSrc: "/titanfan2.png",
-      writeup: `${team.name} Signs Rising Star Player`,
+      writeup: `${team.name || slug} Signs Rising Star Player`,
       date: "Oct 15, 2025",
       link: "/news/2",
     },
     {
       id: 3,
       imageSrc: "/titanfan3.png",
-      writeup: `${team.name} Fans Celebrate Record Win`,
+      writeup: `${team.name || slug} Fans Celebrate Record Win`,
       date: "Oct 18, 2025",
       link: "/news/3",
     },
@@ -156,4 +157,5 @@ export default async function TeamPage({ params }: TeamPageProps) {
   );
 }
 
+// ✅ Force static generation (safe for Vercel)
 export const dynamic = "force-static";
