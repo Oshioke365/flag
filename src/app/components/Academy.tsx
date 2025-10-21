@@ -7,7 +7,11 @@ export default function CFFLAcademyPage() {
     // The main container: takes up the full viewport height and uses flexbox
     // to center the content (the image) both horizontally and vertically.
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div className="flex h-screen w-full items-center justify-center bg-white" >
+=======
+    <div className="flex h-screen w-full items-center justify-center bg-white">
+>>>>>>> parent of 2245bf9 (floating football fixed)
 =======
     <div className="flex h-screen w-full items-center justify-center bg-white">
 >>>>>>> parent of 2245bf9 (floating football fixed)

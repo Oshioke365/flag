@@ -196,8 +196,11 @@ export default function Upcoming() {
       {/* ------------------ 2. GAME REPLAYS SECTION ------------------ */}
       <div className="w-full pt-20 px-6 md:px-[80px] lg:px-[134px]">
 <<<<<<< HEAD
+<<<<<<< HEAD
         {/* Header */}
 =======
+=======
+>>>>>>> parent of 2245bf9 (floating football fixed)
         
         {/* Header with Title and See All Link */}
 >>>>>>> parent of 2245bf9 (floating football fixed)
