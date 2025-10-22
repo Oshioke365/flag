@@ -200,7 +200,7 @@ export default function Upcoming() {
               )}
 
               {/* Content for Team 1 (Left Half) - z-20 */}
-              <div className="absolute left-0 top-0 w-1/2 h-full flex flex-col items-center justify-center p-4 relative z-20">
+              <div className="absolute left-0 top-0 w-1/2 h-full flex flex-col items-center justify-center p-4  z-20">
                 <Image
                   src={game.team1.logo}
                   alt={`${game.team1.name} Logo`}
@@ -218,7 +218,7 @@ export default function Upcoming() {
               </div>
 
               {/* Content for Team 2 (Right Half) - z-20 */}
-              <div className="absolute right-0 top-0 w-1/2 h-full flex flex-col items-center justify-center p-4 relative z-20">
+              <div className="absolute right-0 top-0 w-1/2 h-full flex flex-col items-center justify-center p-4  z-20">
                 <Image
                   src={game.team2.logo}
                   alt={`${game.team2.name} Logo`}

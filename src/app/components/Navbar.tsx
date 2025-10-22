@@ -3,31 +3,29 @@
 import Image from "next/image";
 import Link from "next/link";
 
-// 1. Define Props Interface
 interface NavbarProps {
+  /** Optional prop to change link text color (e.g. "text-black") */
   linkTextColor?: string;
 }
 
-// 2. Accept Props
 export default function Navbar({ linkTextColor }: NavbarProps) {
   const textColorClass = linkTextColor || "text-white";
-  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass} font-machine`;
+  const linkBaseClass = `hover:text-[#C90F0F] transition-colors duration-200 text-xs sm:text-sm ${textColorClass} font-machine`;
 
   return (
     <nav
       className={`
         fixed top-0 left-0 w-full z-50 flex justify-center font-machine
-        bg-[rgba(255,255,255,0.16)] sm:bg-[rgba(255,255,255,0.16)]
-        sm:backdrop-blur-[6px]
+        bg-[rgba(255,255,255,0.16)] backdrop-blur-[6px]
       `}
       style={{
         height: "142px",
         background:
-          "linear-gradient(180deg, rgba(255, 255, 255, 0.16) 14.29%, rgba(255, 255, 255, 0) 100%)",
+          "linear-gradient(180deg, rgba(255,255,255,0.16) 14.29%, rgba(255,255,255,0) 100%)",
       }}
     >
-      <div className="w-full max-w-[1440px] px-6 sm:px-[80px] md:px-[125px] py-[24px] flex justify-center items-center">
-        <div className="flex items-center justify-between font-bold tracking-wide text-sm w-full sm:w-[397px] h-auto sm:h-[94px] gap-4 sm:gap-[19px]">
+      <div className="w-full max-w-[1440px] px-6 sm:px-[80px] md:px-[125px] py-6 flex justify-center items-center">
+        <div className="flex items-center justify-between w-full sm:w-[397px] h-auto sm:h-[94px] gap-4 sm:gap-[19px] font-bold tracking-wide text-sm">
           
           {/* Left links */}
           <div className="hidden sm:flex items-center justify-center gap-[24px]">
@@ -39,7 +37,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
             </Link>
           </div>
 
-          {/* ✅ Center logo (clickable) */}
+          {/* Center logo */}
           <div className="flex justify-center items-center flex-1">
             <Link href="/" aria-label="Go to homepage">
               <Image
@@ -72,7 +70,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
           {/* Mobile menu button */}
           <div className="sm:hidden flex items-center">
             <button
-              className="text-white text-2xl focus:outline-none font-machine"
+              className="text-white text-2xl focus:outline-none"
               aria-label="Menu"
             >
               ☰
