@@ -7,7 +7,11 @@ interface NavbarProps {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   /** Optional prop to change link text color (e.g. "text-black") */
+=======
+  // Optional prop to override the default link text color (e.g., "text-black")
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
   // Optional prop to override the default link text color (e.g., "text-black")
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
@@ -22,6 +26,7 @@ interface NavbarProps {
 
 export default function Navbar({ linkTextColor }: NavbarProps) {
   const textColorClass = linkTextColor || "text-white";
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -55,6 +60,12 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
   return (
     <nav
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
+=======
+  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
+
+  return (
+    <nav
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
       className="fixed top-0 left-0 w-full z-50 flex justify-center"
       style={{
         height: "142px",
@@ -63,6 +74,9 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
         backdropFilter: "blur(6px)",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
+=======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)

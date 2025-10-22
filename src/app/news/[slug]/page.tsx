@@ -4,6 +4,7 @@ import Image from "next/image";
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { PortableText } from "@portabletext/react";
@@ -24,6 +25,8 @@ type PageProps = {
   };
 };
 =======
+=======
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 
@@ -47,6 +50,7 @@ const newsArticles = [
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 const newsArticles = [
   {
@@ -62,12 +66,15 @@ const newsArticles = [
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
+=======
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
 export async function generateStaticParams() {
   return newsArticles.map((article) => ({
     slug: article.slug,
   }));
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -85,6 +92,10 @@ export default async function NewsDetailPage(props: { params: Promise<{ slug: st
   `,
     { slug }
   );
+=======
+export default function NewsDetailPage({ params }: NewsDetailPageProps) {
+  const article = newsArticles.find((item) => item.slug === params.slug);
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 export default function NewsDetailPage({ params }: NewsDetailPageProps) {
   const article = newsArticles.find((item) => item.slug === params.slug);
@@ -117,6 +128,7 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* 📰 Header */}
       <section className="w-full pt-40 pb-8 flex flex-col items-center justify-center">
         <div className="max-w-4xl w-full px-6 md:px-12 text-center">
@@ -138,6 +150,8 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
+=======
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
         {/* Article Header Section */}
         <section className="w-full pt-30 pb-8 flex flex-col items-center justify-center">
           {/* Title and Date */}
@@ -155,6 +169,9 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
           </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
+=======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
@@ -176,6 +193,7 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       {/* 🧾 Main Content */}
       <main className="max-w-4xl mx-auto py-8 px-6 md:px-12">
         {article.content ? (
@@ -186,12 +204,17 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
+=======
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
         {/* ✅ Article Content */}
         <main className="max-w-4xl mx-auto py-8 px-6 md:px-12">
           <p
             className="text-lg leading-relaxed whitespace-pre-line text-justify"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
+=======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
@@ -211,10 +234,13 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {/* ⚡ Extra Sections */}
         {/* ... your sections here ... */}
       </main>
 =======
+=======
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
@@ -231,6 +257,7 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
   >
     Fresh Faces, Fresh Energy
   </h2>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -272,6 +299,46 @@ export default function NewsDetailPage({ params }: NewsDetailPageProps) {
 
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 
+=======
+
+  {/* Image */}
+  <div className="relative w-full h-[400px] mb-3 rounded-lg overflow-hidden">
+    <Image
+      src="/rookieimg.png" // 👈 replace with your own image (e.g. /news-extra1.png)
+      alt="Inside the Locker Room"
+      fill
+      className="object-cover"
+    />
+  </div>
+
+  {/* Photo Credit */}
+  <p
+    className="text-sm text-gray-500 text-center mb-8 italic"
+    style={{
+      fontFamily: 'DM Sans, sans-serif',
+    }}
+  >
+    Photo by: Jide Ajala / Sportsblog
+  </p>
+
+  {/* Paragraph */}
+  <p
+    className="text-lg leading-relaxed text-justify"
+    style={{
+      color: '#292929',
+      fontFamily: 'DM Sans, sans-serif',
+      fontWeight: 400,
+      fontSize: '20px',
+      lineHeight: '32px',
+    }}
+  >
+    Off Szn’s roster looks different this season, and fans have noticed. Instead of easing into the league quietly, their rookies have stepped up from day one. Whether it’s sharp route running, fearless defense, or quick decision-making under pressure, the team’s newcomers are showing confidence beyond their years.
+<br /><br /> It isn’t just about skill — it’s about attitude. These rookies play with urgency, hustle on every down, and bring an infectious energy that spreads across the entire roster.
+  </p>
+</div>
+
+
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
 =======
 
   {/* Image */}
