@@ -10,6 +10,7 @@ export default function HomePage() {
     <main className="relative w-full min-h-screen text-white overflow-hidden flex flex-col items-center">
       {/* Fixed navbar */}
       <Navbar />
+<<<<<<< HEAD
 
       {/* 👇 Add top padding equal to the navbar height */}
       <div className="w-full flex flex-col items-center pt-[142px]">
@@ -19,6 +20,13 @@ export default function HomePage() {
         <Academy />
         <Footer />
       </div>
+=======
+      <HeroSection />
+      <Trending />
+      <Upcoming />
+      <Academy />
+      <Footer />
+>>>>>>> parent of 2245bf9 (floating football fixed)
     </main>
   );
 }
