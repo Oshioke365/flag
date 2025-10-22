@@ -98,10 +98,14 @@ export default function Upcoming() {
       {/* ------------------ 1. UPCOMING SCHEDULE SECTION (Background Darkened) ------------------ */}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="relative w-full flex justify-center items-center rounded-lg overflow-hidden px-6 md:px-[80px] lg:px-[134px]">
 =======
       <div className="relative w-full flex justify-center items-center rounded-lg overflow-hidden px-6 md:px-[80px] lg:px-[134px]" >
 >>>>>>> parent of 6932f2c (Update upcoming.tsx)
+=======
+      <div className="relative w-full flex justify-center items-center rounded-lg overflow-hidden px-6 md:px-[80px] lg:px-[134px]">
+>>>>>>> parent of 2245bf9 (floating football fixed)
 =======
       <div className="relative w-full flex justify-center items-center rounded-lg overflow-hidden px-6 md:px-[80px] lg:px-[134px]">
 >>>>>>> parent of 2245bf9 (floating football fixed)
@@ -114,10 +118,14 @@ export default function Upcoming() {
         />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div className="absolute inset-0 bg-black opacity-30 z-10"></div> 
 =======
         <div className="absolute inset-0 bg-#ffff opacity-30 z-10"></div> 
 >>>>>>> parent of 6932f2c (Update upcoming.tsx)
+=======
+        <div className="absolute inset-0 bg-black opacity-30 z-10"></div> 
+>>>>>>> parent of 2245bf9 (floating football fixed)
 =======
         <div className="absolute inset-0 bg-black opacity-30 z-10"></div> 
 >>>>>>> parent of 2245bf9 (floating football fixed)
@@ -127,9 +135,12 @@ export default function Upcoming() {
     fontWeight: 500,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     paddingLeft:"150px",
 >>>>>>> parent of 6932f2c (Update upcoming.tsx)
+=======
+>>>>>>> parent of 2245bf9 (floating football fixed)
 =======
 >>>>>>> parent of 2245bf9 (floating football fixed)
   }}>
@@ -180,10 +191,14 @@ export default function Upcoming() {
       {/* ------------------ 2. GAME REPLAYS SECTION ------------------ */}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <div className="w-full pt-20 px-6 md:px-[80px] lg:px-[134px]">
 =======
       <div className="w-full pt-20 px-6 md:px-[80px] lg:px-[134px]" >
 >>>>>>> parent of 6932f2c (Update upcoming.tsx)
+=======
+      <div className="w-full pt-20 px-6 md:px-[80px] lg:px-[134px]">
+>>>>>>> parent of 2245bf9 (floating football fixed)
 =======
       <div className="w-full pt-20 px-6 md:px-[80px] lg:px-[134px]">
 >>>>>>> parent of 2245bf9 (floating football fixed)
