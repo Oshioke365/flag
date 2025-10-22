@@ -1,11 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
   },
-  // ❌ do NOT include output: "export"
-  // ❌ do NOT include basePath or assetPrefix for localhost
+  experimental: {
+    optimizeCss: false, // disable LightningCSS to prevent native binding errors
+  },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
