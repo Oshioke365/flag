@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +18,8 @@
 
 /* === CSS Variables (Light/Dark Mode) === */
 =======
+=======
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
 @import "tailwindcss";
 
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
@@ -50,5 +53,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+<<<<<<< HEAD
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
+=======
 >>>>>>> parent of 373efe3 (FONT CHANGEd)
 }
