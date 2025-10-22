@@ -52,7 +52,7 @@ export default function HomePage() {
 
       {/* ================= HERO SECTION ================= */}
       <section
-        className="relative w-full min-h-[480px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat"
+        className="relative w-full min-h-[680px] lg:h-[1002px] overflow-hidden bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: 'url("/hero-bg.png")' }}
       >
         {/* Overlay Gradient */}
@@ -67,8 +67,8 @@ export default function HomePage() {
         {/* CFFL Image */}
         <div className="block sm:hidden h-[185px]" />
         <div
-          className="absolute 
-            top-20 lg:top-[156px] 
+          className="
+            top-65 lg:top-[156px] 
             left-1/2 -translate-x-1/2 
             w-11/12 max-w-4xl lg:max-w-[1126px] 
             h-auto aspect-[1126/756] lg:h-[756px] 
@@ -124,19 +124,38 @@ export default function HomePage() {
           {/* Player Image */}
           <div className="block sm:hidden h-[180px]" />
           <div
-            className="-mt-45 max-w-4xl lg:max-w-[1023px]
-            w-full h-auto aspect-[1023/944] relative"
+            className="-mt-39 max-w-4xl lg:max-w-[1023px]
+            w-full h-auto aspect-[1023/944] relative min-h-[680px]"
           >
-            <img
+            <img 
+
               src="/players.png"
               alt="Player"
-              className="absolute inset-0 w-full h-full object-contain"
+              className="absolute inset-0 w-full h-full object-contain  "
             />
+          
           </div>
         </div>
 
         {/* Fade effect into next section */}
-        <div className="absolute bottom-0 translate-y-10 sm:translate-y-16 w-full h-62 sm:h-86 bg-gradient-to-t from-white via-white/90 to-transparent blur-3xl opacity-100 pointer-events-none" />
+     {/* Seamless Fog Fade into White Section */}
+{/* <div
+  className="
+    absolute bottom-0 w-full 
+    h-[180px] sm:h-[250px] 
+    bg-gradient-to-t from-white via-white/90 to-transparent 
+    pointer-events-none
+  "
+  style={{
+    filter: "blur(40px)",
+    
+    transform: "translateY(0)",
+  }}
+/> */}
+<div>
+  color
+</div>
+
       </section>
 
       {/* ================= OVERLAPPING MIDDLE IMAGE ================= */}
@@ -185,136 +204,137 @@ style={{
 
 
       {/* ================= TRENDING SECTION ================= */}
-      <section className="relative bg-white text-black w-full pt-[50px] pb-[120px] px-6 md:px-[80px] lg:px-[134px] " >
-        {/* Padding top is increased (pt-[250px]) so that the overlapping image has space */}
+   {/* ================= TRENDING SECTION ================= */}
+<section className="relative bg-white text-black w-full py-6 px-4 sm:px-8 md:px-16 lg:px-[134px] overflow-hidden">
+  {/* Background "TRENDING" Text */}
+<h1
+  className="absolute top-0 left-0 -translate-y-[40%]
+             text-left whitespace-nowrap 
+             text-[80px] sm:text-[140px] md:text-[200px] lg:text-[250px] 
+             leading-none font-medium uppercase 
+             text-[#BAB8B8] opacity-20 pointer-events-none select-none z-0 pl-[20px] sm:pl-[60px] lg:pl-[134px]"
+  style={{ fontFamily: 'ITC Machine Std, sans-serif' }}
+>
+  Trending
+</h1>
 
-        {/* Background "TRENDING" Text */}
-       
-        <h1
-          className="absolute top-1/2 left-0 -translate-y-[301%]
-             text-left w-auto 
-             text-[164px] leading-[110px] font-medium uppercase 
-             text-[#BAB8B8] opacity-30 pointer-events-none select-none z-0 pl-[134px]"
-          style={{ fontFamily: "ITC Machine Std, sans-serif", fontSize:"250px", fontWeight:"500px"}}
+
+  {/* Header */}
+  <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between mb-10 md:mb-16 gap-6 w-full">
+    <h2
+      className="text-[24px] sm:text-[32px] md:text-[40px] font-extrabold text-[#012752] uppercase tracking-tight"
+      style={{ fontFamily: "DM Sans, sans-serif" }}
+    >
+      Trending News
+    </h2>
+    <a
+      href="#"
+      className="text-[#262626] text-[16px] sm:text-[18px] font-[700] hover:underline transition"
+      style={{ fontFamily: "DM Sans, sans-serif" }}
+    >
+      See all &gt;
+    </a>
+  </div>
+
+  {/* News Cards */}
+  <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 justify-items-center">
+    {newsItems.map((item, index) => {
+      const isActive = activeIndex === index;
+      const activeWidth = 330;
+      const activeHeight = 280;
+      const inactiveWidth = 250;
+      const inactiveHeight = 210;
+
+      return (
+        <motion.div
+          key={item.id}
+          animate={{
+            scale: isActive ? 1.07 : 1,
+            y: isActive ? -10 : 0,
+            opacity: isActive ? 1 : 0.9,
+          }}
+          transition={{ type: "spring", stiffness: 220, damping: 18 }}
+          className="flex flex-col items-start text-left w-full max-w-[350px]"
         >
-          Trending
-        </h1>
-
-        {/* Header */}
-        <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6 w-full">
-          <h2
-            className="text-[28px] md:text-[40px] font-extrabold text-[#012752] uppercase tracking-tight"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
+          <motion.div
+            animate={{
+              width: isActive ? activeWidth : inactiveWidth,
+              height: isActive ? activeHeight : inactiveHeight,
+            }}
+            transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            className="overflow-hidden rounded-2xl mx-auto"
           >
-            Trending News
-          </h2>
-          <a
-            href="#"
-            className="text-[#262626] text-[18px] font-[700] hover:underline transition"
-            style={{ fontFamily: "DM Sans, sans-serif" }}
-          >
-            See all &gt;
-          </a>
-        </div>
+            <Image
+              src={item.image}
+              alt={item.title}
+              width={isActive ? activeWidth : inactiveWidth}
+              height={isActive ? activeHeight : inactiveHeight}
+              className="object-cover w-full h-full transition-all duration-300"
+            />
+          </motion.div>
 
-        {/* News Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center mb-10">
-          {newsItems.map((item, index) => {
-            const isActive = activeIndex === index;
-            const activeWidth = 330;
-            const activeHeight = 280;
-            const inactiveWidth = 250;
-            const inactiveHeight = 210;
-
-            return (
-              <motion.div
-                key={item.id}
-                animate={{
-                  scale: isActive ? 1.07 : 1,
-                  y: isActive ? -10 : 0,
-                  opacity: isActive ? 1 : 0.8,
-                }}
-                transition={{ type: "spring", stiffness: 220, damping: 18 }}
-                className="flex flex-col items-start text-left w-full max-w-[350px] h-full"
-              >
-                <motion.div
-                  animate={{
-                    width: isActive ? activeWidth : inactiveWidth,
-                    height: isActive ? activeHeight : inactiveHeight,
-                  }}
-                  transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                  className="overflow-hidden rounded-2xl mx-auto"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={isActive ? activeWidth : inactiveWidth}
-                    height={isActive ? activeHeight : inactiveHeight}
-                    className="object-cover w-full h-full transition-all duration-300"
-                  />
-                </motion.div>
-
-                <div className="mt-12 flex flex-col items-start text-left w-full">
-                  <p className="text-gray-500 text-[10px] font-medium mb-1">
-                    {item.date}
-                  </p>
-                  <h3
-                    className={`font-bold transition-all duration-300 ${
-                      isActive
-                        ? "text-[20px] md:text-[22px] text-[#002060]"
-                        : "text-[12px] md:text-[16px] text-gray-700"
-                    }`}
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    className="text-[#262626] text-[12px] font-normal mt-2 leading-relaxed max-w-[300px]"
-                    style={{ fontFamily: "DM Sans, sans-serif" }}
-                  >
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </div>
-
-        {/* Controls */}
-        <div className="flex items-center justify-center gap-10 mt-10">
-          <button
-            onClick={handlePrev}
-            className="w-[70px] h-[50px] flex items-center justify-center rounded-[3px] border border-gray-300 bg-transparent 
-               hover:bg-[#012752] active:bg-[#012752] transition cursor-pointer group"
-          >
-            <ArrowLeft className="w-5 h-5 text-[#919192] group-hover:text-white group-active:text-white transition-colors duration-200" />
-          </button>
-
-          <div className="flex items-center gap-8">
-            {newsItems.map((_, index) => (
-              <span
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`text-[24px] font-semibold cursor-pointer transition-colors ${
-                  activeIndex === index
-                    ? "text-[#012752]"
-                    : "text-gray-400 hover:text-[#012752]"
-                }`}
-              >
-                {index + 1}
-              </span>
-            ))}
+          <div className="mt-6 sm:mt-8 flex flex-col items-start text-left w-full">
+            <p className="text-gray-500 text-[10px] sm:text-[12px] font-medium mb-1">
+              {item.date}
+            </p>
+            <h3
+              className={`font-bold transition-all duration-300 ${
+                isActive
+                  ? "text-[18px] sm:text-[20px] md:text-[22px] text-[#002060]"
+                  : "text-[14px] sm:text-[16px] text-gray-700"
+              }`}
+              style={{ fontFamily: "DM Sans, sans-serif" }}
+            >
+              {item.title}
+            </h3>
+            <p
+              className="text-[#262626] text-[12px] sm:text-[14px] font-normal mt-2 leading-relaxed max-w-[300px]"
+              style={{ fontFamily: "DM Sans, sans-serif" }}
+            >
+              {item.desc}
+            </p>
           </div>
+        </motion.div>
+      );
+    })}
+  </div>
 
-          <button
-            onClick={handleNext}
-            className="w-[70px] h-[50px] flex items-center justify-center rounded-[3px] border border-gray-300 bg-transparent 
+  {/* Controls */}
+  <div className="relative z-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 mt-10">
+    <button
+      onClick={handlePrev}
+      className="w-[50px] sm:w-[60px] h-[40px] sm:h-[50px] flex items-center justify-center rounded-[3px] border border-gray-300 bg-transparent 
                hover:bg-[#012752] active:bg-[#012752] transition cursor-pointer group"
-          >
-            <ArrowRight className="w-5 h-5 text-[#919192] group-hover:text-white group-active:text-white transition-colors duration-200" />
-          </button>
-        </div>
-      </section>
+    >
+      <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 text-[#919192] group-hover:text-white group-active:text-white transition-colors duration-200" />
+    </button>
+
+    <div className="flex items-center gap-4 sm:gap-8">
+      {newsItems.map((_, index) => (
+        <span
+          key={index}
+          onClick={() => setActiveIndex(index)}
+          className={`text-[18px] sm:text-[22px] font-semibold cursor-pointer transition-colors ${
+            activeIndex === index
+              ? "text-[#012752]"
+              : "text-gray-400 hover:text-[#012752]"
+          }`}
+        >
+          {index + 1}
+        </span>
+      ))}
+    </div>
+
+    <button
+      onClick={handleNext}
+      className="w-[50px] sm:w-[60px] h-[40px] sm:h-[50px] flex items-center justify-center rounded-[3px] border border-gray-300 bg-transparent 
+               hover:bg-[#012752] active:bg-[#012752] transition cursor-pointer group"
+    >
+      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 text-[#919192] group-hover:text-white group-active:text-white transition-colors duration-200" />
+    </button>
+  </div>
+</section>
+
     </main>
   );
 }
