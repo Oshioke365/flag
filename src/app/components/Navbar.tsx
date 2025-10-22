@@ -4,12 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface NavbarProps {
+<<<<<<< HEAD
   /** Optional prop to change link text color (e.g. "text-black") */
+=======
+  // Optional prop to override the default link text color (e.g., "text-black")
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
   linkTextColor?: string;
 }
 
 export default function Navbar({ linkTextColor }: NavbarProps) {
   const textColorClass = linkTextColor || "text-white";
+<<<<<<< HEAD
   const linkBaseClass = `hover:text-[#C90F0F] transition-colors duration-200 text-xs sm:text-sm ${textColorClass} font-machine`;
 
   return (
@@ -22,6 +27,18 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
         height: "142px",
         background:
           "linear-gradient(180deg, rgba(255,255,255,0.16) 14.29%, rgba(255,255,255,0) 100%)",
+=======
+  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
+
+  return (
+    <nav
+      className="fixed top-0 left-0 w-full z-50 flex justify-center"
+      style={{
+        height: "142px",
+        background:
+          "linear-gradient(180deg, rgba(255, 255, 255, 0.16) 14.29%, rgba(255, 255, 255, 0) 100%)",
+        backdropFilter: "blur(6px)",
+>>>>>>> parent of 373efe3 (FONT CHANGEd)
       }}
     >
       <div className="w-full max-w-[1440px] px-6 sm:px-[80px] md:px-[125px] py-6 flex justify-center items-center">

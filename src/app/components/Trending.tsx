@@ -133,19 +133,13 @@ export default function Trending() {
                     isActive
                       ? "text-[20px] md:text-[22px] text-[#002060]"
                       : "text-[12px] md:text-[16px] text-gray-700"
-                  }`}  style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 700,
-  }}
+                  }`}
                 >
                   {item.title}
                 </h3>
 
                 {/* Description — same style for active/inactive */}
-                <p className="text-[#262626] text-[12px] font-normal mt-2 leading-relaxed max-w-[300px] "   style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 400,
-  }}>
+                <p className="text-[#262626] text-[12px] font-normal mt-2 leading-relaxed max-w-[300px]">
                   {item.desc}
                 </p>
               </div>

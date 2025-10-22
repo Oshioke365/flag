@@ -106,10 +106,7 @@ export default function Upcoming() {
         />
         <div className="absolute inset-0 bg-black opacity-30 z-10"></div> 
 
-        <h2 className="absolute top-8 left-8 md:top-10 md:left-12 text-white text-[28px] md:text-[48px] font-extrabold uppercase tracking-tight z-20"   style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 500,
-  }}>
+        <h2 className="absolute top-8 left-8 md:top-10 md:left-12 text-white text-[32px] md:text-[48px] font-extrabold uppercase tracking-tight z-20">
           Upcoming Schedule
         </h2>
 
@@ -159,10 +156,7 @@ export default function Upcoming() {
         
         {/* Header with Title and See All Link */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6 w-full">
-          <h2 className="text-[28px] md:text-[40px] font-extrabold text-[#002060] uppercase tracking-tight"   style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 500,
-  }}>
+          <h2 className="text-[32px] md:text-[40px] font-extrabold text-[#002060] uppercase tracking-tight">
             Game Replays
           </h2>
           <a
@@ -208,11 +202,7 @@ export default function Upcoming() {
                   height={60}
                   className="object-contain" 
                 />
-                <p className="mt-1 text-white text-[28px] font-bold uppercase"   style={{
-    fontFamily: "ITC Machine Std, sans-serif",
-    fontWeight: 700,
-  }}
-  >
+                <p className="mt-1 text-white text-[28px] font-bold uppercase">
                   {game.team1.name}
                 </p>
               </div>

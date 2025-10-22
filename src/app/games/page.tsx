@@ -178,12 +178,7 @@ export default function GamesPage() {
           />
         </div>
 
-        <div className="flex justify-between items-end p-3"  
-        style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 700,
-  }}
-  >
+        <div className="flex justify-between items-end p-3">
           <div className="text-left text-xs text-gray-700 font-semibold">
             <p className="text-sm text-gray-900">MATCH DAY 1</p>
             <p>SAT, 25/09</p>
@@ -217,21 +212,15 @@ export default function GamesPage() {
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
             <div className="flex items-center justify-center space-x-4">
               <img src="/team1.png" alt="Lagos Hawks Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg uppercase"  style={{
-    fontFamily: "ITC Machine Std, sans-serif",
-    fontWeight: 700,
-  }}>
-                Lagos Hawks <span className="text-[#FFFFFF]">vs</span> Lagos Lions
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg uppercase">
+                Lagos Hawks <span className="text-[#C90F0F]">vs</span> Lagos Lions
               </h2>
               <img src="/team6.png" alt="Lagos Lions Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between items-end p-3"         style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 700,
-  }}>
+        <div className="flex justify-between items-end p-3">
           <div className="text-left text-xs text-gray-700 font-semibold">
             <p className="text-sm text-gray-900">MATCH DAY 2</p>
             <p>SAT, 01/10</p>
@@ -254,21 +243,15 @@ export default function GamesPage() {
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
             <div className="flex items-center justify-center space-x-4">
               <img src="/team5.png" alt="Lagos Hawks Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg uppercase"  style={{
-    fontFamily: "ITC Machine Std, sans-serif",
-    fontWeight: 700,
-  }}>
-                MAVERICKS <span className="text-[#FFFFF]">vs</span> OUTLAWS
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg uppercase">
+                MAVERICKS <span className="text-[#C90F0F]">vs</span> OUTLAWS
               </h2>
               <img src="/team2.png" alt="Lagos Lions Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between items-end p-3"         style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 700,
-  }}>
+        <div className="flex justify-between items-end p-3">
           <div className="text-left text-xs text-gray-700 font-semibold">
             <p className="text-sm text-gray-900">MATCH DAY 3</p>
             <p>SAT, 08/10</p>
@@ -290,21 +273,15 @@ export default function GamesPage() {
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
             <div className="flex items-center justify-center space-x-4">
               <img src="/team7.png" alt="Lagos Hawks Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg uppercase"  style={{
-    fontFamily: "ITC Machine Std, sans-serif",
-    fontWeight: 700,
-  }}>
-                DRAGON <span className="text-[#FFFFFF]">vs</span> SPARTANS
+              <h2 className="text-3xl md:text-4xl font-extrabold text-white drop-shadow-lg uppercase">
+                DRAGON <span className="text-[#C90F0F]">vs</span> SPARTANS
               </h2>
               <img src="/team9.png" alt="Lagos Lions Logo" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
             </div>
           </div>
         </div>
 
-        <div className="flex justify-between items-end p-3"         style={{
-    fontFamily: "DM Sans, sans-serif",
-    fontWeight: 700,
-  }}>
+        <div className="flex justify-between items-end p-3">
           <div className="text-left text-xs text-gray-700 font-semibold">
             <p className="text-sm text-gray-900">MATCH DAY 3</p>
             <p>SAT, 15/10</p>
