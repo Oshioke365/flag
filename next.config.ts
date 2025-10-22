@@ -1,11 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "export", // 👈 ensures Next.js produces a static site
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    unoptimized: true, // 👈 required for GitHub Pages
   },
-  // ❌ do NOT include output: "export"
-  // ❌ do NOT include basePath or assetPrefix for localhost
+  basePath: "/flag", // 👈 replace with your GitHub repo name
+  assetPrefix: "/flag/", // 👈 same here
 };
 
-module.exports = nextConfig;
+export default nextConfig;
