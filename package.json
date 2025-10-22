@@ -4,8 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+<<<<<<< HEAD
     "build": "next build ",
     "start": "next start"
+=======
+    "build": "next build && next export",
+    "deploy": "gh-pages -d out"
+>>>>>>> parent of efb5cfe (bugs fixed)
   },
   "dependencies": {
     "@portabletext/react": "^4.0.3",
