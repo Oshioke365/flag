@@ -124,7 +124,7 @@ export default function HomePage() {
           {/* Player Image */}
           <div className="block sm:hidden h-[180px]" />
           <div
-            className="-mt-79 max-w-4xl lg:max-w-[1023px]
+            className="-mt-49 max-w-4xl lg:max-w-[1023px]
             w-full h-auto aspect-[1023/944] relative min-h-[680px]"
           >
             <img 
