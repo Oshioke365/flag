@@ -7,9 +7,9 @@ const nextConfig: NextConfig = {
   output: "export",
 
   // ✅ Disable Next Image Optimization (required for static export)
-  images: {
-    unoptimized: true,
-  },
+  // images: {
+  //   unoptimized: true,
+  // },
 
   // ✅ Avoid build breaking due to type or ESLint warnings on Netlify
   typescript: {
