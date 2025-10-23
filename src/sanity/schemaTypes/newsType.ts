@@ -35,7 +35,9 @@ export default {
     {
       name: 'content',
       title: 'Content',
-      type: 'text', // or 'blockContent' if you use Portable Text
+ type: 'array',
+of: [{ type: 'block' }]
+ // or 'blockContent' if you use Portable Text
     },
   ],
 };

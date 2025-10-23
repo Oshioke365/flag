@@ -68,7 +68,7 @@ export default function HomePage() {
         <div className="block sm:hidden h-[185px]" />
         <div
           className="
-            top-65 lg:top-[156px] 
+            top-20 lg:top-[156px] 
             left-1/2 -translate-x-1/2 
             w-11/12 max-w-4xl lg:max-w-[1126px] 
             h-auto aspect-[1126/756] lg:h-[756px] 
@@ -124,7 +124,7 @@ export default function HomePage() {
           {/* Player Image */}
           <div className="block sm:hidden h-[180px]" />
           <div
-            className="-mt-39 max-w-4xl lg:max-w-[1023px]
+            className="-mt-79 max-w-4xl lg:max-w-[1023px]
             w-full h-auto aspect-[1023/944] relative min-h-[680px]"
           >
             <img 
@@ -139,22 +139,23 @@ export default function HomePage() {
 
         {/* Fade effect into next section */}
      {/* Seamless Fog Fade into White Section */}
-{/* <div
+<div
   className="
     absolute bottom-0 w-full 
-    h-[180px] sm:h-[250px] 
+    h-[280px] sm:h-[100px] 
     bg-gradient-to-t from-white via-white/90 to-transparent 
     pointer-events-none
   "
   style={{
-    filter: "blur(40px)",
     
+    paddingBottom:"200px",
     transform: "translateY(0)",
+    zIndex:"1",
   }}
-/> */}
-<div>
+/>
+{/* <div>
   color
-</div>
+</div> */}
 
       </section>
 
@@ -166,6 +167,7 @@ style={{
   backgroundColor:"#fff", 
   // position:"absolute",
   // marginTop:"1000px",
+  zIndex:"3",
   }}>
   <Image
     src="football.png" // 👈 your image file
@@ -213,7 +215,7 @@ style={{
              text-[80px] sm:text-[140px] md:text-[200px] lg:text-[250px] 
              leading-none font-medium uppercase 
              text-[#BAB8B8] opacity-20 pointer-events-none select-none z-0 pl-[20px] sm:pl-[60px] lg:pl-[134px]"
-  style={{ fontFamily: 'ITC Machine Std, sans-serif' }}
+  style={{ fontFamily: 'ITC Machine Std, sans-serif', paddingTop:"150px"}}
 >
   Trending
 </h1>
