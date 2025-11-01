@@ -13,8 +13,50 @@ interface TeamPageProps {
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
+<<<<<<< HEAD
 // ✅ Main page component
 export default async function TeamPage({ params }: TeamPageProps) {
+=======
+// ✅ Required for static export
+export async function generateStaticParams() {
+  return [
+    { slug: "titans" },
+    { slug: "warriors" },
+    { slug: "lions" },
+    // Add more teams here
+  ];
+}
+
+// ✅ Optional (helps Next.js handle pre-render)
+export const dynamic = "force-static";
+
+// 📰 Dummy team news (you can later fetch from Sanity)
+const newsArticles = [
+  {
+    id: 1,
+    imageSrc: "/news-img-1.png",
+    writeup: "Gameday with the Raptors",
+    date: "October 10, 2025",
+    slug: "gameday-with-the-raptors",
+  },
+  {
+    id: 2,
+    imageSrc: "/news1.png",
+    writeup: "Training camp preview: Ajanaku flexing his skills on the pitch",
+    date: "October 3, 2025",
+    slug: "ajanaku-training-camp",
+  },
+  {
+    id: 3,
+    imageSrc: "/news-img-3.png",
+    writeup: "Gameday: Rookies under the radar",
+    date: "September 25, 2025",
+    slug: "rookies-under-the-radar",
+  },
+];
+
+export default function TeamDetail({ params }: TeamPageProps) {
+>>>>>>> branch-9
   const { slug } = params;
 
   const team = await client.fetch(
@@ -56,10 +98,14 @@ export default async function TeamPage({ params }: TeamPageProps) {
 
   return (
     <>
+<<<<<<< HEAD
+=======
+      {/* ✅ Navbar */}
+>>>>>>> branch-9
       <Navbar linkTextColor="text-black" />
 
       <main className="min-h-screen bg-white text-gray-800 pt-[160px] px-6 md:px-10">
-        {/* Hero Image */}
+        {/* ✅ Hero Image */}
         <div className="relative w-full h-auto mb-8">
           {team.logo?.asset?.url ? (
             <Image
@@ -80,7 +126,11 @@ export default async function TeamPage({ params }: TeamPageProps) {
           )}
         </div>
 
+<<<<<<< HEAD
         {/* Fan Carousel */}
+=======
+        {/* ✅ Fan Image Carousel */}
+>>>>>>> branch-9
         <div className="flex items-center justify-center py-8">
           <button
             className="p-3 bg-white border border-gray-300 shadow-md text-gray-800 hover:bg-gray-100 transition flex-shrink-0 mr-4"
@@ -113,7 +163,11 @@ export default async function TeamPage({ params }: TeamPageProps) {
           </button>
         </div>
 
+<<<<<<< HEAD
         {/* Team News Section */}
+=======
+        {/* ✅ Team News Section */}
+>>>>>>> branch-9
         <div className="bg-[#f7f7f7] py-12 px-6 md:px-10 -mx-6 md:-mx-10 mt-8">
           <h2 className="text-3xl font-extrabold text-[#002060] mb-8 uppercase tracking-tight">
             Team News
@@ -123,7 +177,8 @@ export default async function TeamPage({ params }: TeamPageProps) {
             {newsArticles.map((article) => (
               <Link
                 key={article.id}
-                href={article.link}
+                // ✅ NEW: Dynamic link to team-specific article page
+                href={`/teams/${slug}/news/${article.slug}`}
                 className="group block bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 hover:shadow-xl"
               >
                 <div className="relative w-full h-48">

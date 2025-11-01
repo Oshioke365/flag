@@ -1,107 +1,37 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 interface NavbarProps {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  /** Optional prop to change link text color (e.g. "text-black") */
-=======
-  // Optional prop to override the default link text color (e.g., "text-black")
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
-  // Optional prop to override the default link text color (e.g., "text-black")
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
-  // Optional prop to override the default link text color (e.g., "text-black")
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
-  // Optional prop to override the default link text color (e.g., "text-black")
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
-  // Optional prop to override the default link text color (e.g., "text-black")
->>>>>>> parent of 373efe3 (FONT CHANGEd)
+
+
   linkTextColor?: string;
 }
 
 export default function Navbar({ linkTextColor }: NavbarProps) {
+  const [isOpen, setIsOpen] = useState(false);
   const textColorClass = linkTextColor || "text-white";
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  const linkBaseClass = `hover:text-[#C90F0F] transition-colors duration-200 text-xs sm:text-sm ${textColorClass} font-machine`;
+  const linkBaseClass = `hover:text-[#C90F0F] transition text-sm ${textColorClass} font-machine`;
 
   return (
     <nav
       className={`
         fixed top-0 left-0 w-full z-50 flex justify-center font-machine
-        bg-[rgba(255,255,255,0.16)] backdrop-blur-[6px]
+        bg-[#0A2A6B] sm:bg-[rgba(255,255,255,0.16)] sm:backdrop-blur-[6px]
       `}
-=======
-  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
-
-  return (
-    <nav
-      className="fixed top-0 left-0 w-full z-50 flex justify-center"
->>>>>>> parent of 373efe3 (FONT CHANGEd)
       style={{
         height: "142px",
         background:
           "linear-gradient(180deg, rgba(255,255,255,0.16) 14.29%, rgba(255,255,255,0) 100%)",
-=======
-  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
-
-  return (
-    <nav
-=======
-  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
-
-  return (
-    <nav
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
-  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
-
-  return (
-    <nav
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
-  const linkBaseClass = `hover:text-[#C90F0F] transition text-xs sm:text-sm ${textColorClass}`;
-
-  return (
-    <nav
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-      className="fixed top-0 left-0 w-full z-50 flex justify-center"
-      style={{
-        height: "142px",
-        background:
-          "linear-gradient(180deg, rgba(255, 255, 255, 0.16) 14.29%, rgba(255, 255, 255, 0) 100%)",
-        backdropFilter: "blur(6px)",
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
->>>>>>> parent of 373efe3 (FONT CHANGEd)
-=======
->>>>>>> parent of 373efe3 (FONT CHANGEd)
       }}
     >
-      <div className="w-full max-w-[1440px] px-6 sm:px-[80px] md:px-[125px] py-6 flex justify-center items-center">
-        <div className="flex items-center justify-between w-full sm:w-[397px] h-auto sm:h-[94px] gap-4 sm:gap-[19px] font-bold tracking-wide text-sm">
+      <div className="w-full max-w-[1440px] px-6 sm:px-[80px] md:px-[125px] py-[24px] flex justify-center items-center relative">
+        <div className="flex items-center justify-between font-bold tracking-wide text-sm w-full sm:w-[397px] h-auto sm:h-[94px] gap-4 sm:gap-[19px]">
           
-          {/* Left links */}
+          {/* Left links (Desktop only) */}
           <div className="hidden sm:flex items-center justify-center gap-[24px]">
             <Link href="#" className={linkBaseClass}>
               WATCH
@@ -131,7 +61,7 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
             </Link>
           </div>
 
-          {/* Right links */}
+          {/* Right links (Desktop only) */}
           <div className="hidden sm:flex items-center justify-center gap-[24px]">
             <Link href="/teams" className={linkBaseClass}>
               TEAMS
@@ -144,7 +74,8 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
           {/* Mobile menu button */}
           <div className="sm:hidden flex items-center">
             <button
-              className="text-white text-2xl focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-[#012752] text-2xl focus:outline-none font-machine"
               aria-label="Menu"
             >
               ☰
@@ -152,6 +83,43 @@ export default function Navbar({ linkTextColor }: NavbarProps) {
           </div>
         </div>
       </div>
+
+      {/* ===== FULLSCREEN MENU OVERLAY (MOBILE ONLY) ===== */}
+      {isOpen && (
+        <div
+          className="
+            fixed inset-0 z-[60] sm:hidden
+            flex flex-col justify-center items-center
+            bg-gradient-to-b from-[#0A2A6B] to-[#000B24]
+            text-white p-10
+            animate-fadeIn
+          "
+        >
+          {/* ✕ Close Button (top-right) */}
+          <button
+            onClick={() => setIsOpen(false)}
+            className="absolute top-8 right-8 text-3xl font-bold text-white hover:text-[#C90F0F] transition"
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
+
+          {/* Menu Links */}
+          <div className="flex flex-col justify-center items-center space-y-8">
+            {["HOME", "WATCH", "GAMES", "TEAMS", "FANS"].map((item) => (
+              <Link
+                key={item}
+                href={`/${item === "HOME" ? "" : item.toLowerCase()}`}
+                className="flex items-center justify-between border-b border-white/40 pb-2 w-full max-w-[300px] hover:text-[#C90F0F] transition"
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="text-2xl font-extrabold tracking-wider">{item}</span>
+                <ArrowUpRight className="w-6 h-6" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
