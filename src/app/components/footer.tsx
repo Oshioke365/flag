@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-// --- Data for the Logo Bar (Unchanged) ---
+
 const teamLogos = [
   '/team4.png',
   '/team3.png',
@@ -14,7 +14,7 @@ const teamLogos = [
 
 ];
 
-// --- Data for the Footer Link Columns (Unchanged) ---
+
 const footerLinks = [
   {
     title: 'General',
@@ -68,7 +68,7 @@ export default function Footer() {
         {/* 1. Team Logos Section */}
         <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-4 py-8 border-b border-gray-700/50">
           {teamLogos.map((src, index) => (
-            <div key={index} className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+            <div key={index} className="w-10 h-10 md:w-12 md:h-12 shrink-0">
               <Image
                 src={src}
                 alt={`Team logo ${index + 1}`}
@@ -105,7 +105,7 @@ export default function Footer() {
           
           {/* Copyright Text and League Logo */}
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 max-w-2xl text-center md:text-left">
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <Image
                 src="/logo1.png"
                 alt="CFFL League Logo"

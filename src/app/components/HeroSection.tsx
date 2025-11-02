@@ -71,7 +71,7 @@ export default function HomePage() {
             top-20 lg:top-[156px] 
             left-1/2 -translate-x-1/2 
             w-11/12 max-w-4xl lg:max-w-[1126px] 
-            h-auto aspect-[1126/756] lg:h-[756px] 
+            h-auto aspect-1126/756 lg:h-[756px] 
             rounded-2xl overflow-hidden flex justify-center items-center relative"
         >
           <img
@@ -122,10 +122,10 @@ export default function HomePage() {
           </span>
 
           {/* Player Image */}
-          <div className="block sm:hidden h-[80px]" />
+          <div className="block sm:hidden h-20" />
           <div
             className="-mt-49 max-w-4xl lg:max-w-[1023px]
-            w-full h-auto aspect-[1023/944] relative min-h-[680px]"
+            w-full h-auto aspect-1023/944 relative min-h-[680px]"
           >
             <img 
 
@@ -143,7 +143,7 @@ export default function HomePage() {
   className="
     absolute bottom-0 w-full 
     h-[280px] sm:h-[100px] 
-    bg-gradient-to-t from-white via-white/90 to-transparent 
+    bg-linear-to-t from-white via-white/90 to-transparent 
     pointer-events-none
   "
   style={{
@@ -153,9 +153,7 @@ export default function HomePage() {
     zIndex:"1",
   }}
 />
-{/* <div>
-  color
-</div> */}
+
 
       </section>
 
@@ -165,12 +163,11 @@ export default function HomePage() {
 style={{
   height:"99px", 
   backgroundColor:"#fff", 
-  // position:"absolute",
-  // marginTop:"1000px",
+ 
   zIndex:"3",
   }}>
   <Image
-    src="football.png" // 👈 your image file
+    src="football.png" 
     alt="Mid Overlap Image"
     width={316.4822129201497}
     height={186.00000274354937}
@@ -214,7 +211,7 @@ style={{
              text-left whitespace-nowrap 
              text-[80px] sm:text-[140px] md:text-[200px] lg:text-[250px] 
              leading-none font-medium uppercase 
-             text-[#BAB8B8] opacity-20 pointer-events-none select-none z-0 pl-[20px] sm:pl-[60px] lg:pl-[134px]"
+             text-[#BAB8B8] opacity-20 pointer-events-none select-none z-0 pl-5 sm:pl-[60px] lg:pl-[134px]"
   style={{ fontFamily: 'ITC Machine Std, sans-serif', paddingTop:"150px"}}
 >
   Trending

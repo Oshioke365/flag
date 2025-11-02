@@ -27,7 +27,7 @@ export default function TeamsPage() {
       <main
         className="
           min-h-screen bg-white text-gray-800 
-          pt-[140px] md:pt-[160px] pb-20 px-6 md:px-10
+          pt-[140px] md:pt-40 pb-20 px-6 md:px-10
         "
       >
         {/* --- Page Container --- */}

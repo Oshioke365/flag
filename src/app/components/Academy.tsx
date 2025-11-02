@@ -13,7 +13,7 @@ export default function CFFLAcademyPage() {
       
       {/* Updated Image component with new dimensions */}
       <Image
-        src="/CFFL-Academy.png" // Assumes the image is in your /public directory
+        src="/CFFL-Academy.png" 
         alt="CFFL Academy Logo"
         width={854} // Set the width
         height={956} // Set the height

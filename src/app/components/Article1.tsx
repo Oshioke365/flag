@@ -10,7 +10,7 @@ export default function SamplePage() {
       {/* Image Section */}
       <section className="mt-10 flex flex-col items-center">
         <Image
-          src="/example.jpg" // replace with your image path (e.g. /hero.jpg)
+          src="/example.jpg" 
           alt="Sample image"
           width={600}
           height={400}

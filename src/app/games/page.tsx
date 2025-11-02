@@ -60,7 +60,7 @@ const GameResults: React.FC = () => {
           {/* Game Row */}
           <div className="bg-white rounded-lg shadow-sm flex flex-col md:flex-row items-stretch md:items-center justify-between gap-6 p-4">
             {/* Teams and Scores */}
-            <div className="flex flex-col flex-grow">
+            <div className="flex flex-col grow">
               {game.teams?.map((team: any, teamIndex: number) => (
                 <div
                   key={teamIndex}
@@ -117,7 +117,7 @@ const GameResults: React.FC = () => {
             </div>
 
             {/* Image + Play Button */}
-            <div className="relative w-full md:w-[220px] h-[130px] flex-shrink-0 rounded-lg overflow-hidden shadow-md">
+            <div className="relative w-full md:w-[220px] h-[130px] shrink-0 rounded-lg overflow-hidden shadow-md">
               {game.gameImage?.asset?.url ? (
                 <img
                   src={game.gameImage.asset.url}
@@ -202,7 +202,7 @@ export default function GamesPage() {
     <>
       <Navbar linkTextColor="text-gray-800" />
 
-      <main className="min-h-screen bg-white text-gray-800 pt-[160px]">
+      <main className="min-h-screen bg-white text-gray-800 pt-40">
         {/* ---------------- TOP SECTION ---------------- */}
         <div className="px-4 sm:px-6 md:px-10 max-w-8xl mx-auto">
           <div className="w-full mb-10">
@@ -230,7 +230,7 @@ export default function GamesPage() {
                 <ChevronLeft size={24} />
               </button>
 
-              <div className="flex flex-wrap justify-center md:justify-between items-start flex-grow mx-2 sm:mx-4 gap-3 md:gap-0">
+              <div className="flex flex-wrap justify-center md:justify-between items-start grow mx-2 sm:mx-4 gap-3 md:gap-0">
                 {weekData.map((weekItem, index) => {
                   const isCurrent = index === currentWeekIndex;
                   return (
