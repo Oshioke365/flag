@@ -60,7 +60,7 @@ export default async function MeetTheFansPage() {
           {fans.length === 0 ? (
             <p className="text-center text-gray-500">No fan photos available.</p>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
               {fans.map((fan) => (
                 <div
                   key={fan._id}

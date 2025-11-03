@@ -48,7 +48,9 @@ const GameResults: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto p-6 bg-white font-sans">
-      <h2 className="text-2xl font-bold text-[#002060] mb-10 uppercase">GAME RESULTS</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-[#002060] mb-10 uppercase text-center md:text-left">
+        GAME RESULTS
+      </h2>
 
       {games.map((game, index) => (
         <div key={game._id || index} className="mb-10 border-b border-gray-200 pb-8">
@@ -64,12 +66,12 @@ const GameResults: React.FC = () => {
               {game.teams?.map((team: any, teamIndex: number) => (
                 <div
                   key={teamIndex}
-                  className={`flex items-center justify-between py-3 ${
+                  className={`flex items-center justify-between py-3 flex-wrap ${
                     teamIndex === 0 ? "" : "border-t border-gray-300"
                   } ${team.isWinner ? "font-bold" : ""}`}
                 >
                   {/* Team Info */}
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 min-w-[160px]">
                     {team.logo?.asset?.url ? (
                       <img
                         src={team.logo.asset.url}
@@ -127,7 +129,6 @@ const GameResults: React.FC = () => {
               ) : (
                 <div className="w-full h-full bg-gray-200" />
               )}
-              {/* Play Icon */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
                   <svg
@@ -142,7 +143,7 @@ const GameResults: React.FC = () => {
             </div>
 
             {/* Buttons */}
-            <div className="flex flex-col space-y-2 w-full md:w-[140px] text-xs font-medium">
+            <div className="flex flex-col md:flex-col space-y-2 w-full md:w-[140px] text-xs font-medium">
               <button className="px-3 py-2 border border-gray-400 rounded-md hover:bg-gray-100 transition">
                 Gamecast
               </button>
@@ -166,20 +167,15 @@ export default function GamesPage() {
   const [activeDivision, setActiveDivision] = useState<"Men" | "Women">("Men");
   const [matches, setMatches] = useState<any[]>([]);
 
-  const handleWeekClick = (index: number) => setCurrentWeekIndex(index);
-  const handleDivisionClick = (division: "Men" | "Women") =>
-    setActiveDivision(division);
+  const handleWeekClick = (index: number) => {
+    if (index >= 0 && index < weekData.length) setCurrentWeekIndex(index);
+  };
+
+  const handleDivisionClick = (division: "Men" | "Women") => setActiveDivision(division);
 
   const activeColor = "#1a1a1a";
   const inactiveColor = "#777777";
 
-  const segmentBaseStyle =
-    "py-2 px-6 text-sm font-semibold transition-colors duration-200";
-  const segmentActiveStyle = "bg-[#012752] text-white shadow-inner";
-  const segmentInactiveStyle =
-    "bg-transparent text-white hover:bg-[#a80f0f]";
-
-  /* ---------------- FETCH FIXTURES ---------------- */
   useEffect(() => {
     const fetchMatches = async () => {
       const data = await client.fetch(`
@@ -211,7 +207,7 @@ export default function GamesPage() {
               alt="CFFL Games Background"
               width={1200}
               height={400}
-              className="w-full h-auto object-cover rounded-lg shadow-xl"
+              className="w-full h-[200px] sm:h-[300px] md:h-[400px] object-cover rounded-lg shadow-xl"
             />
           </div>
 
@@ -284,29 +280,29 @@ export default function GamesPage() {
           <div className="px-4 sm:px-6 md:px-10">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-12 gap-6 w-full">
               <h2
-                className="text-[28px] md:text-[40px] font-extrabold text-[#002060] uppercase tracking-tight"
+                className="text-[28px] md:text-[40px] font-extrabold text-[#002060] uppercase tracking-tight text-center md:text-left"
                 style={{ fontFamily: "ITC Machine Std, sans-serif" }}
               >
                 Game Fixtures
               </h2>
 
-              <div className="flex rounded-md overflow-hidden bg-[#C90F0F] shadow-lg">
+              <div className="flex rounded-md overflow-hidden bg-[#C90F0F] shadow-lg self-center">
                 <button
                   onClick={() => handleDivisionClick("Men")}
-                  className={`${segmentBaseStyle} ${
+                  className={`py-2 px-6 text-sm font-semibold transition-colors duration-200 ${
                     activeDivision === "Men"
-                      ? segmentActiveStyle
-                      : segmentInactiveStyle
+                      ? "bg-[#012752] text-white shadow-inner"
+                      : "bg-transparent text-white hover:bg-[#a80f0f]"
                   }`}
                 >
                   Men
                 </button>
                 <button
                   onClick={() => handleDivisionClick("Women")}
-                  className={`${segmentBaseStyle} ${
+                  className={`py-2 px-6 text-sm font-semibold transition-colors duration-200 ${
                     activeDivision === "Women"
-                      ? segmentActiveStyle
-                      : segmentInactiveStyle
+                      ? "bg-[#012752] text-white shadow-inner"
+                      : "bg-transparent text-white hover:bg-[#a80f0f]"
                   }`}
                 >
                   Women
@@ -327,7 +323,7 @@ export default function GamesPage() {
                         <img
                           src="/m2.png"
                           alt="Match Background"
-                          className="w-full h-auto object-contain rounded-t-lg"
+                          className="w-full h-[200px] sm:h-[280px] md:h-[350px] object-cover rounded-t-lg"
                         />
                         <img
                           src="/matchday2.png"
@@ -336,28 +332,18 @@ export default function GamesPage() {
                         />
 
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-2 sm:px-4 z-10">
-                          <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-2 sm:space-y-0">
+                          <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 space-y-3 sm:space-y-0">
                             <img
                               src={match.team1.logo.asset.url}
                               alt={match.team1.name}
-                              className="object-contain"
-                              style={{
-                                width: "99px",
-                                height: "89px",
-                                transform: "rotate(0deg)",
-                                opacity: 1,
-                                mixBlendMode: "luminosity",
-                              }}
+                              className="object-contain w-[70px] sm:w-[99px] h-[60px] sm:h-[89px]"
+                              style={{ mixBlendMode: "luminosity" }}
                             />
                             <h2
-                              className="text-white uppercase drop-shadow-lg text-center"
+                              className="text-white uppercase drop-shadow-lg text-[28px] sm:text-[50px] md:text-[70px] leading-tight"
                               style={{
                                 fontFamily: "ITC Machine Std, sans-serif",
                                 fontWeight: 700,
-                                fontStyle: "normal",
-                                fontSize: "70px",
-                                lineHeight: "100%",
-                                letterSpacing: "0%",
                               }}
                             >
                               {match.team1.name}{" "}
@@ -367,59 +353,31 @@ export default function GamesPage() {
                             <img
                               src={match.team2.logo.asset.url}
                               alt={match.team2.name}
-                              className="object-contain"
-                              style={{
-                                width: "99px",
-                                height: "89px",
-                                transform: "rotate(0deg)",
-                                opacity: 1,
-                                mixBlendMode: "luminosity",
-                              }}
+                              className="object-contain w-[70px] sm:w-[99px] h-[60px] sm:h-[89px]"
+                              style={{ mixBlendMode: "luminosity" }}
                             />
                           </div>
                         </div>
                       </div>
 
                       <div
-                        className="flex flex-col sm:flex-row justify-between items-start sm:items-end p-3 gap-3 sm:gap-0"
+                        className="flex flex-col sm:flex-row justify-between items-start sm:items-end p-4 gap-4 sm:gap-0"
                         style={{
                           fontFamily: "DM Sans, sans-serif",
                           fontWeight: 700,
                         }}
                       >
-                        <div className="text-left text-xs text-gray-700 font-semibold">
-                          <p className="text-sm text-gray-900">
+                        <div className="text-left text-sm text-gray-700 font-semibold">
+                          <p className="text-base text-gray-900">
                             MATCH DAY {match.matchDay}
                           </p>
-                          <p
-                            style={{
-                              fontFamily: "DM Sans, sans-serif",
-                              fontWeight: 700,
-                              fontStyle: "normal",
-                              fontSize: "18px",
-                              lineHeight: "129%",
-                              letterSpacing: "0%",
-                            }}
-                          >
-                            {match.date}
-                          </p>
-                          <p
-                            style={{
-                              fontFamily: "DM Sans, sans-serif",
-                              fontWeight: 700,
-                              fontStyle: "normal",
-                              fontSize: "18px",
-                              lineHeight: "129%",
-                              letterSpacing: "0%",
-                            }}
-                          >
-                            {match.time}
-                          </p>
+                          <p className="text-lg">{match.date}</p>
+                          <p className="text-lg">{match.time}</p>
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-2 w-full sm:w-auto">
                           <button
-                            className="flex items-center justify-center space-x-1 py-2 px-3 rounded-md text-white font-medium text-sm transition duration-300 w-full sm:w-auto"
+                            className="flex items-center justify-center py-2 px-3 rounded-md text-white font-medium text-sm transition duration-300 w-full sm:w-auto"
                             style={{
                               backgroundColor: "#012752",
                               border: "1px solid #012752",
@@ -429,7 +387,7 @@ export default function GamesPage() {
                           </button>
 
                           <button
-                            className="flex items-center justify-center space-x-1 py-2 px-3 rounded-md font-medium text-sm transition duration-300 w-full sm:w-auto"
+                            className="flex items-center justify-center py-2 px-3 rounded-md font-medium text-sm transition duration-300 w-full sm:w-auto"
                             style={{
                               backgroundColor: "white",
                               color: "#012752",
@@ -446,9 +404,8 @@ export default function GamesPage() {
               </section>
             )}
 
-            {/* WOMEN’S FIXTURES PLACEHOLDER */}
             {activeDivision === "Women" && (
-              <div className="text-xl text-gray-600 font-medium">
+              <div className="text-xl text-gray-600 font-medium text-center">
                 Displaying <b>Women's</b> fixtures for{" "}
                 <b>{weekData[currentWeekIndex].week}</b>...
               </div>
