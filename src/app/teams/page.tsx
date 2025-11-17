@@ -7,14 +7,14 @@ import Link from "next/link";
 
 // --- Team Data ---
 const teams = [
-  {  logoSrc: "/team4.png", link: "/teams/titans", altText: "Titans Logo" },
-  {  logoSrc: "/team3.png", link: "/teams/wolverines", altText: "Wolverines Logo" },
-  {  logoSrc: "/team2.png", link: "/teams/lions", altText: "Outlaw Logo" },
-  {  logoSrc: "/team6.png", link: "/teams/eagles", altText: "Eagles Logo" },
-  {  logoSrc: "/team7.png", link: "/teams/sharks", altText: "Dragons Logo" },
-  {  logoSrc: "/team5.png", link: "/teams/bears", altText: "Bears Logo" },
-  {  logoSrc: "/team1.png", link: "/teams/raptors", altText: "Raptors Logo" },
-  {  logoSrc: "/team9.png", link: "/teams/hawks", altText: "Hawks Logo" },
+  { name: "Titans", logoSrc: "/team4.png", link: "/teams/titans", altText: "Titans Logo" },
+  { name: "Wolverines", logoSrc: "/team3.png", link: "/teams/wolverines", altText: "Wolverines Logo" },
+  { name: "Outlaws", logoSrc: "/team2.png", link: "/teams/lions", altText: "Outlaw Logo" },
+  { name: "Lagos Lions", logoSrc: "/team6.png", link: "/teams/eagles", altText: "Lions Logo" },
+  { name: "Dragons", logoSrc: "/team7.png", link: "/teams/sharks", altText: "Dragons Logo" },
+  { name: "Maverciks", logoSrc: "/team5.png", link: "/teams/bears", altText: "Mavericks Logo" },
+  { name: "Lagos Hawks", logoSrc: "/team1.png", link: "/teams/raptors", altText: "Hawks Logo" },
+  { name: "Spartans", logoSrc: "/team9.png", link: "/teams/hawks", altText: "Spartans Logo" },
 ];
 
 export default function TeamsPage() {
