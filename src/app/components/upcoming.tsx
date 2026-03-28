@@ -191,6 +191,7 @@ export default function UpcomingAndReplays() {
           ))}
         </div>
       </div>
+      
     </section>
   );
 }
